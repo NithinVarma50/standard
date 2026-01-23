@@ -5,11 +5,10 @@ interface WallpaperCardProps {
   src: string;
   alt: string;
   filename: string;
-  className?: string;
-  imageClassName?: string;
+  allowRotate?: boolean;
 }
 
-const WallpaperCard = ({ src, alt, filename, className, imageClassName }: WallpaperCardProps) => {
+const WallpaperCard = ({ src, alt, filename, allowRotate = false }: WallpaperCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleDownload = async () => {
@@ -31,12 +30,12 @@ const WallpaperCard = ({ src, alt, filename, className, imageClassName }: Wallpa
 
   return (
     <div
-      className={`relative w-full cursor-pointer ${className || ""}`}
+      className="relative w-full cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className="relative overflow-hidden rounded-lg transition-all duration-300 ease-apple h-full"
+        className={`relative overflow-hidden rounded-lg transition-all duration-300 ease-apple ${allowRotate ? 'aspect-video flex items-center justify-center bg-black/5' : ''}`}
         style={{
           transform: isHovered ? "scale(1.02)" : "scale(1)",
           boxShadow: isHovered
@@ -47,7 +46,7 @@ const WallpaperCard = ({ src, alt, filename, className, imageClassName }: Wallpa
         <img
           src={src}
           alt={alt}
-          className={`w-full h-full object-cover transition-all duration-300 ease-apple ${imageClassName || ""}`}
+          className={`w-full h-auto object-cover transition-all duration-300 ease-apple ${allowRotate ? 'rotate-90 scale-[1.35]' : ''}`}
           style={{
             opacity: isHovered ? 1 : 0.92,
             filter: isHovered ? "brightness(1)" : "brightness(0.95)",
