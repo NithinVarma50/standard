@@ -8,6 +8,7 @@ import mobileWallpaper2 from "@/assets/mobile-wallpaper-2.jpg";
 import mobileWallpaper3 from "@/assets/mobile-wallpaper-3.jpg";
 import mobileWallpaper4 from "@/assets/mobile-wallpaper-4.jpg";
 import mobileWallpaper5 from "@/assets/mobile-wallpaper-5.jpg";
+import mobileWallpaper6 from "@/assets/mobile-wallpaper-6.jpg";
 
 const mobileWallpapers = [
   { src: mobileWallpaper1, alt: "Mountain peak in clouds", filename: "standard-mobile-mountain.jpg" },
@@ -15,6 +16,7 @@ const mobileWallpapers = [
   { src: mobileWallpaper3, alt: "Misty forest", filename: "standard-mobile-forest.jpg" },
   { src: mobileWallpaper4, alt: "Aurora borealis", filename: "standard-mobile-aurora.jpg" },
   { src: mobileWallpaper5, alt: "Ocean wave", filename: "standard-mobile-ocean.jpg" },
+  { src: mobileWallpaper6, alt: "Penguin on ice", filename: "standard-mobile-penguin.jpg" },
 ];
 
 const Mobile = () => {
