@@ -87,3 +87,27 @@
     transform: translateY(0);
   }
 }
+
+.animate-fade-slide-in-1 {
+  animation: fadeSlideIn 0.5s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.1s;
+}
+
+.animate-fade-slide-in-2 {
+  animation: fadeSlideIn 0.5s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.animate-fade-slide-in-3 {
+  animation: fadeSlideIn 0.5s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+}
+
+.animate-fade-slide-in-4 {
+  animation: fadeSlideIn 0.5s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
+}

@@ -86,6 +86,10 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.3s ease-out",
         "fade-out": "fade-out 0.3s ease-out",
+        "fade-slide-in-1": "fadeSlideIn 0.5s ease-out 0.1s forwards",
+        "fade-slide-in-2": "fadeSlideIn 0.5s ease-out 0.2s forwards",
+        "fade-slide-in-3": "fadeSlideIn 0.5s ease-out 0.3s forwards",
+        "fade-slide-in-4": "fadeSlideIn 0.5s ease-out 0.4s forwards",
       },
       transitionDuration: {
         "DEFAULT": "300ms",
