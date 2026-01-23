@@ -9,24 +9,7 @@ import wallpaper3 from "@/assets/wallpaper-3.jpg";
 import wallpaper4 from "@/assets/wallpaper-4.jpg";
 import wallpaper5 from "@/assets/wallpaper-5.jpg";
 
-import desktopBatch1 from "@/assets/desktop-batch1-1.jpg";
-import desktopBatch2 from "@/assets/desktop-batch1-2.jpg";
-import desktopBatch3 from "@/assets/desktop-batch1-3.jpg";
-import desktopBatch4 from "@/assets/desktop-batch1-4.jpg";
-import desktopBatch5 from "@/assets/desktop-batch1-5.jpg";
-import desktopBatch6 from "@/assets/desktop-batch1-6.jpg";
-import desktopBatch7 from "@/assets/desktop-batch1-7.jpg";
-
 const desktopWallpapers = [
-  // Newest with rotation
-  { src: desktopBatch1, alt: "Vertical Desktop Wallpaper 1", filename: "standard-desktop-batch1-01.jpg", allowRotate: true },
-  { src: desktopBatch2, alt: "Vertical Desktop Wallpaper 2", filename: "standard-desktop-batch1-02.jpg", allowRotate: true },
-  { src: desktopBatch3, alt: "Vertical Desktop Wallpaper 3", filename: "standard-desktop-batch1-03.jpg", allowRotate: true },
-  { src: desktopBatch4, alt: "Vertical Desktop Wallpaper 4", filename: "standard-desktop-batch1-04.jpg", allowRotate: true },
-  { src: desktopBatch5, alt: "Vertical Desktop Wallpaper 5", filename: "standard-desktop-batch1-05.jpg", allowRotate: true },
-  { src: desktopBatch6, alt: "Vertical Desktop Wallpaper 6", filename: "standard-desktop-batch1-06.jpg", allowRotate: true },
-  { src: desktopBatch7, alt: "Vertical Desktop Wallpaper 7", filename: "standard-desktop-batch1-07.jpg", allowRotate: true },
-
   { src: wallpaper1, alt: "Mountain silhouette at dusk", filename: "standard-desktop-mountain.jpg" },
   { src: wallpaper2, alt: "Desert sand dunes", filename: "standard-desktop-desert.jpg" },
   { src: wallpaper3, alt: "Ocean wave", filename: "standard-desktop-ocean.jpg" },
@@ -56,7 +39,6 @@ const Desktop = () => {
                 src={wallpaper.src}
                 alt={wallpaper.alt}
                 filename={wallpaper.filename}
-                allowRotate={wallpaper.allowRotate}
               />
             ))}
           </div>
