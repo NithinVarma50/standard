@@ -66,17 +66,18 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
             <header className="z-10 xl:top-4 relative">
                 <div className="mx-6">
                     <div className="flex items-center justify-between pt-4">
-                        {logoUrl && (
-                             <div
-                                className="inline-flex items-center justify-center bg-center w-[100px] h-[40px] bg-cover rounded"
-                                style={{ backgroundImage: `url(${logoUrl})` }}
-                            />
-                        )}
-                        {!logoUrl && (
-                             <span className="text-xs font-medium tracking-[0.3em] text-white/90 uppercase">
-                                Standard
-                            </span>
-                        )}
+                        <Link to="/" className="hover:opacity-80 transition-opacity">
+                            {logoUrl ? (
+                                <div
+                                    className="inline-flex items-center justify-center bg-center w-[100px] h-[40px] bg-cover rounded"
+                                    style={{ backgroundImage: `url(${logoUrl})` }}
+                                />
+                            ) : (
+                                <span className="text-xs font-medium tracking-[0.3em] text-white/90 uppercase">
+                                    Standard
+                                </span>
+                            )}
+                        </Link>
 
                         <nav className="hidden md:flex items-center gap-2">
                             {navLinks.length > 0 && (
@@ -110,7 +111,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                             aria-expanded={mobileMenuOpen}
                             aria-label="Toggle menu"
                         >
-                           {mobileMenuOpen ? <X className="h-5 w-5 text-white/90" /> : <Menu className="h-5 w-5 text-white/90" />}
+                            {mobileMenuOpen ? <X className="h-5 w-5 text-white/90" /> : <Menu className="h-5 w-5 text-white/90" />}
                         </button>
                     </div>
                 </div>
@@ -118,7 +119,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
 
             {/* Mobile Menu Overlay */}
             {mobileMenuOpen && (
-                 <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-md md:hidden flex flex-col items-center justify-center space-y-8 animate-fade-in">
+                <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-md md:hidden flex flex-col items-center justify-center space-y-8 animate-fade-in">
                     {navLinks.map((link, index) => (
                         <Link
                             key={index}
@@ -129,7 +130,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                             {link.label}
                         </Link>
                     ))}
-                     {ctaButtonText && (
+                    {ctaButtonText && (
                         <Link
                             to={ctaButtonHref}
                             onClick={() => setMobileMenuOpen(false)}
@@ -139,7 +140,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                             <ArrowRight className="h-5 w-5" />
                         </Link>
                     )}
-                 </div>
+                </div>
             )}
 
             <div className="z-10 relative">
