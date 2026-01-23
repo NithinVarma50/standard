@@ -9,7 +9,92 @@ import wallpaper3 from "@/assets/wallpaper-3.jpg";
 import wallpaper4 from "@/assets/wallpaper-4.jpg";
 import wallpaper5 from "@/assets/wallpaper-5.jpg";
 
+// Bulk Imports
+import bulk1 from "@/assets/desktop-bulk-1.jpg";
+import bulk2 from "@/assets/desktop-bulk-2.jpg";
+import bulk3 from "@/assets/desktop-bulk-3.jpg";
+import bulk4 from "@/assets/desktop-bulk-4.jpg";
+import bulk5 from "@/assets/desktop-bulk-5.jpg";
+import bulk6 from "@/assets/desktop-bulk-6.jpg";
+import bulk7 from "@/assets/desktop-bulk-7.jpg";
+import bulk8 from "@/assets/desktop-bulk-8.jpg";
+import bulk9 from "@/assets/desktop-bulk-9.jpg";
+import bulk10 from "@/assets/desktop-bulk-10.jpg";
+import bulk11 from "@/assets/desktop-bulk-11.jpg";
+import bulk12 from "@/assets/desktop-bulk-12.jpg";
+import bulk13 from "@/assets/desktop-bulk-13.jpg";
+import bulk14 from "@/assets/desktop-bulk-14.jpg";
+import bulk15 from "@/assets/desktop-bulk-15.jpg";
+import bulk16 from "@/assets/desktop-bulk-16.jpg";
+import bulk17 from "@/assets/desktop-bulk-17.jpg";
+import bulk18 from "@/assets/desktop-bulk-18.jpg";
+import bulk19 from "@/assets/desktop-bulk-19.jpg";
+import bulk20 from "@/assets/desktop-bulk-20.jpg";
+import bulk21 from "@/assets/desktop-bulk-21.jpg";
+import bulk22 from "@/assets/desktop-bulk-22.jpg";
+import bulk23 from "@/assets/desktop-bulk-23.jpg";
+import bulk24 from "@/assets/desktop-bulk-24.jpg";
+import bulk25 from "@/assets/desktop-bulk-25.jpg";
+import bulk26 from "@/assets/desktop-bulk-26.jpg";
+import bulk27 from "@/assets/desktop-bulk-27.jpg";
+import bulk28 from "@/assets/desktop-bulk-28.jpg";
+import bulk29 from "@/assets/desktop-bulk-29.jpg";
+import bulk30 from "@/assets/desktop-bulk-30.jpg";
+import bulk31 from "@/assets/desktop-bulk-31.jpg";
+import bulk32 from "@/assets/desktop-bulk-32.jpg";
+import bulk33 from "@/assets/desktop-bulk-33.jpg";
+import bulk34 from "@/assets/desktop-bulk-34.jpg";
+import bulk35 from "@/assets/desktop-bulk-35.jpg";
+import bulk36 from "@/assets/desktop-bulk-36.jpg";
+import bulk37 from "@/assets/desktop-bulk-37.jpg";
+import bulk38 from "@/assets/desktop-bulk-38.jpg";
+import bulk39 from "@/assets/desktop-bulk-39.jpg";
+import bulk40 from "@/assets/desktop-bulk-40.jpg";
+
 const desktopWallpapers = [
+  // Newest first
+  { src: bulk1, alt: "Desktop wallpaper 1", filename: "standard-desktop-01.jpg" },
+  { src: bulk2, alt: "Desktop wallpaper 2", filename: "standard-desktop-02.jpg" },
+  { src: bulk3, alt: "Desktop wallpaper 3", filename: "standard-desktop-03.jpg" },
+  { src: bulk4, alt: "Desktop wallpaper 4", filename: "standard-desktop-04.jpg" },
+  { src: bulk5, alt: "Desktop wallpaper 5", filename: "standard-desktop-05.jpg" },
+  { src: bulk6, alt: "Desktop wallpaper 6", filename: "standard-desktop-06.jpg" },
+  { src: bulk7, alt: "Desktop wallpaper 7", filename: "standard-desktop-07.jpg" },
+  { src: bulk8, alt: "Desktop wallpaper 8", filename: "standard-desktop-08.jpg" },
+  { src: bulk9, alt: "Desktop wallpaper 9", filename: "standard-desktop-09.jpg" },
+  { src: bulk10, alt: "Desktop wallpaper 10", filename: "standard-desktop-10.jpg" },
+  { src: bulk11, alt: "Desktop wallpaper 11", filename: "standard-desktop-11.jpg" },
+  { src: bulk12, alt: "Desktop wallpaper 12", filename: "standard-desktop-12.jpg" },
+  { src: bulk13, alt: "Desktop wallpaper 13", filename: "standard-desktop-13.jpg" },
+  { src: bulk14, alt: "Desktop wallpaper 14", filename: "standard-desktop-14.jpg" },
+  { src: bulk15, alt: "Desktop wallpaper 15", filename: "standard-desktop-15.jpg" },
+  { src: bulk16, alt: "Desktop wallpaper 16", filename: "standard-desktop-16.jpg" },
+  { src: bulk17, alt: "Desktop wallpaper 17", filename: "standard-desktop-17.jpg" },
+  { src: bulk18, alt: "Desktop wallpaper 18", filename: "standard-desktop-18.jpg" },
+  { src: bulk19, alt: "Desktop wallpaper 19", filename: "standard-desktop-19.jpg" },
+  { src: bulk20, alt: "Desktop wallpaper 20", filename: "standard-desktop-20.jpg" },
+  { src: bulk21, alt: "Desktop wallpaper 21", filename: "standard-desktop-21.jpg" },
+  { src: bulk22, alt: "Desktop wallpaper 22", filename: "standard-desktop-22.jpg" },
+  { src: bulk23, alt: "Desktop wallpaper 23", filename: "standard-desktop-23.jpg" },
+  { src: bulk24, alt: "Desktop wallpaper 24", filename: "standard-desktop-24.jpg" },
+  { src: bulk25, alt: "Desktop wallpaper 25", filename: "standard-desktop-25.jpg" },
+  { src: bulk26, alt: "Desktop wallpaper 26", filename: "standard-desktop-26.jpg" },
+  { src: bulk27, alt: "Desktop wallpaper 27", filename: "standard-desktop-27.jpg" },
+  { src: bulk28, alt: "Desktop wallpaper 28", filename: "standard-desktop-28.jpg" },
+  { src: bulk29, alt: "Desktop wallpaper 29", filename: "standard-desktop-29.jpg" },
+  { src: bulk30, alt: "Desktop wallpaper 30", filename: "standard-desktop-30.jpg" },
+  { src: bulk31, alt: "Desktop wallpaper 31", filename: "standard-desktop-31.jpg" },
+  { src: bulk32, alt: "Desktop wallpaper 32", filename: "standard-desktop-32.jpg" },
+  { src: bulk33, alt: "Desktop wallpaper 33", filename: "standard-desktop-33.jpg" },
+  { src: bulk34, alt: "Desktop wallpaper 34", filename: "standard-desktop-34.jpg" },
+  { src: bulk35, alt: "Desktop wallpaper 35", filename: "standard-desktop-35.jpg" },
+  { src: bulk36, alt: "Desktop wallpaper 36", filename: "standard-desktop-36.jpg" },
+  { src: bulk37, alt: "Desktop wallpaper 37", filename: "standard-desktop-37.jpg" },
+  { src: bulk38, alt: "Desktop wallpaper 38", filename: "standard-desktop-38.jpg" },
+  { src: bulk39, alt: "Desktop wallpaper 39", filename: "standard-desktop-39.jpg" },
+  { src: bulk40, alt: "Desktop wallpaper 40", filename: "standard-desktop-40.jpg" },
+
+  // Previous
   { src: wallpaper1, alt: "Mountain silhouette at dusk", filename: "standard-desktop-mountain.jpg" },
   { src: wallpaper2, alt: "Desert sand dunes", filename: "standard-desktop-desert.jpg" },
   { src: wallpaper3, alt: "Ocean wave", filename: "standard-desktop-ocean.jpg" },
