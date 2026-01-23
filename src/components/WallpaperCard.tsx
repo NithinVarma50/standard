@@ -5,9 +5,11 @@ interface WallpaperCardProps {
   src: string;
   alt: string;
   filename: string;
+  className?: string;
+  imageClassName?: string;
 }
 
-const WallpaperCard = ({ src, alt, filename }: WallpaperCardProps) => {
+const WallpaperCard = ({ src, alt, filename, className, imageClassName }: WallpaperCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleDownload = async () => {
@@ -29,12 +31,12 @@ const WallpaperCard = ({ src, alt, filename }: WallpaperCardProps) => {
 
   return (
     <div
-      className="relative w-full cursor-pointer"
+      className={`relative w-full cursor-pointer ${className || ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className="relative overflow-hidden rounded-lg transition-all duration-300 ease-apple"
+        className="relative overflow-hidden rounded-lg transition-all duration-300 ease-apple h-full"
         style={{
           transform: isHovered ? "scale(1.02)" : "scale(1)",
           boxShadow: isHovered
@@ -45,7 +47,7 @@ const WallpaperCard = ({ src, alt, filename }: WallpaperCardProps) => {
         <img
           src={src}
           alt={alt}
-          className="w-full h-auto object-cover transition-all duration-300 ease-apple"
+          className={`w-full h-full object-cover transition-all duration-300 ease-apple ${imageClassName || ""}`}
           style={{
             opacity: isHovered ? 1 : 0.92,
             filter: isHovered ? "brightness(1)" : "brightness(0.95)",

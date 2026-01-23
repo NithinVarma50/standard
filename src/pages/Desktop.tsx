@@ -8,8 +8,25 @@ import wallpaper2 from "@/assets/wallpaper-2.jpg";
 import wallpaper3 from "@/assets/wallpaper-3.jpg";
 import wallpaper4 from "@/assets/wallpaper-4.jpg";
 import wallpaper5 from "@/assets/wallpaper-5.jpg";
+import desktopNew1 from "@/assets/desktop-new-1.jpg";
+import desktopNew2 from "@/assets/desktop-new-2.jpg";
+import desktopNew3 from "@/assets/desktop-new-3.jpg";
+import desktopNew4 from "@/assets/desktop-new-4.jpg";
+import desktopNew5 from "@/assets/desktop-new-5.jpg";
+import desktopNew6 from "@/assets/desktop-new-6.jpg";
+import desktopNew7 from "@/assets/desktop-new-7.jpg";
 
 const desktopWallpapers = [
+  // New additions (Horizontal adjusted)
+  { src: desktopNew1, alt: "Desktop wallpaper 1", filename: "standard-desktop-new-01.jpg" },
+  { src: desktopNew2, alt: "Desktop wallpaper 2", filename: "standard-desktop-new-02.jpg" },
+  { src: desktopNew3, alt: "Desktop wallpaper 3", filename: "standard-desktop-new-03.jpg" },
+  { src: desktopNew4, alt: "Desktop wallpaper 4", filename: "standard-desktop-new-04.jpg" },
+  { src: desktopNew5, alt: "Desktop wallpaper 5", filename: "standard-desktop-new-05.jpg" },
+  { src: desktopNew6, alt: "Desktop wallpaper 6", filename: "standard-desktop-new-06.jpg" },
+  { src: desktopNew7, alt: "Desktop wallpaper 7", filename: "standard-desktop-new-07.jpg" },
+
+  // Original
   { src: wallpaper1, alt: "Mountain silhouette at dusk", filename: "standard-desktop-mountain.jpg" },
   { src: wallpaper2, alt: "Desert sand dunes", filename: "standard-desktop-desert.jpg" },
   { src: wallpaper3, alt: "Ocean wave", filename: "standard-desktop-ocean.jpg" },
@@ -39,6 +56,8 @@ const Desktop = () => {
                 src={wallpaper.src}
                 alt={wallpaper.alt}
                 filename={wallpaper.filename}
+                className="aspect-[16/10] w-full"
+                imageClassName="w-full h-full object-cover object-center"
               />
             ))}
           </div>
