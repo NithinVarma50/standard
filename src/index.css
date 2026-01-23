@@ -1,43 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* STANDARD - Apple TV inspired design system
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* STANDARD - Apple TV inspired dark theme */
-    --background: 0 0% 4%; /* #0B0B0B */
-    --foreground: 0 0% 93%; /* #EDEDED */
+    /* Core colors - near black background */
+    --background: 240 6% 4%; /* #09090b */
+    --foreground: 0 0% 98%; /* #fafafa */
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 93%;
+    /* Surface colors */
+    --bg-100: 240 6% 9%; /* #18181b */
+    --bg-200: 240 5% 15%; /* #27272a */
+    --bg-300: 240 4% 26%; /* #3f3f46 */
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 93%;
+    /* Text hierarchy */
+    --text-100: 0 0% 98%; /* #fafafa */
+    --text-200: 240 5% 90%; /* #e4e4e7 */
+    --text-300: 240 4% 66%; /* #a1a1aa */
+    --text-400: 240 4% 46%; /* #71717a */
 
-    --primary: 0 0% 93%;
-    --primary-foreground: 0 0% 4%;
+    --card: 240 6% 9%;
+    --card-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 93%;
+    --popover: 240 6% 9%;
+    --popover-foreground: 0 0% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 6% 4%;
 
-    --accent: 0 0% 18%;
-    --accent-foreground: 0 0% 93%;
+    --secondary: 240 5% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 93%;
+    --muted: 240 4% 26%;
+    --muted-foreground: 240 4% 66%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 93%;
+    --accent: 240 5% 15%;
+    --accent-foreground: 0 0% 98%;
 
-    --radius: 0.75rem;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 26%;
+    --input: 240 4% 26%;
+    --ring: 0 0% 98%;
+
+    --radius: 0.5rem;
 
     /* Wallpaper specific */
     --wallpaper-dimmed: 0.92;
@@ -55,6 +68,22 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'Instrument Serif', Georgia, serif;
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
