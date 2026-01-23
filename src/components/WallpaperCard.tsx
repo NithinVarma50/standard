@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CurtainButton } from "@/components/ui/curtain-button";
 
 interface WallpaperCardProps {
   src: string;
@@ -52,22 +53,24 @@ const WallpaperCard = ({ src, alt, filename }: WallpaperCardProps) => {
           loading="lazy"
         />
 
-        {/* Download button - Apple TV style */}
-        <button
-          onClick={handleDownload}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-2 text-sm font-medium tracking-wide transition-all duration-300 ease-apple backdrop-blur-sm"
+        {/* Download button with ghost curtain animation */}
+        <div
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 transition-all duration-300 ease-apple"
           style={{
             opacity: isHovered ? 1 : 0,
             transform: isHovered
               ? "translate(-50%, 0)"
               : "translate(-50%, 8px)",
-            color: "hsl(0 0% 93%)",
-            background: "rgba(255, 255, 255, 0.1)",
-            borderRadius: "9999px",
           }}
         >
-          Download
-        </button>
+          <CurtainButton
+            text="Download"
+            variant="ghost"
+            size="sm"
+            onClick={handleDownload}
+            className="backdrop-blur-sm bg-white/10 rounded-full px-6"
+          />
+        </div>
       </div>
     </div>
   );
