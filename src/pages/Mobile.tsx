@@ -35,8 +35,66 @@ import bulk21 from "@/assets/mobile-bulk-21.jfif";
 import bulk22 from "@/assets/mobile-bulk-22.jfif";
 import bulk23 from "@/assets/mobile-bulk-23.jfif";
 
+// Batch 2 imports
+import batch2_1 from "@/assets/mobile-batch2-1.jpg";
+import batch2_2 from "@/assets/mobile-batch2-2.jpg";
+import batch2_3 from "@/assets/mobile-batch2-3.jpg";
+import batch2_4 from "@/assets/mobile-batch2-4.jpg";
+import batch2_5 from "@/assets/mobile-batch2-5.jpg";
+import batch2_6 from "@/assets/mobile-batch2-6.jpg";
+import batch2_7 from "@/assets/mobile-batch2-7.jpg";
+import batch2_8 from "@/assets/mobile-batch2-8.jpg";
+import batch2_9 from "@/assets/mobile-batch2-9.jpg";
+import batch2_10 from "@/assets/mobile-batch2-10.jpg";
+import batch2_11 from "@/assets/mobile-batch2-11.jpg";
+import batch2_12 from "@/assets/mobile-batch2-12.jpg";
+import batch2_13 from "@/assets/mobile-batch2-13.jpg";
+import batch2_14 from "@/assets/mobile-batch2-14.jpg";
+import batch2_15 from "@/assets/mobile-batch2-15.jpg";
+import batch2_16 from "@/assets/mobile-batch2-16.jpg";
+import batch2_17 from "@/assets/mobile-batch2-17.jpg";
+import batch2_18 from "@/assets/mobile-batch2-18.jpg";
+import batch2_19 from "@/assets/mobile-batch2-19.jpg";
+import batch2_20 from "@/assets/mobile-batch2-20.jpg";
+import batch2_21 from "@/assets/mobile-batch2-21.jpg";
+import batch2_22 from "@/assets/mobile-batch2-22.jpg";
+import batch2_23 from "@/assets/mobile-batch2-23.jpg";
+import batch2_24 from "@/assets/mobile-batch2-24.jpg";
+import batch2_25 from "@/assets/mobile-batch2-25.jpg";
+import batch2_26 from "@/assets/mobile-batch2-26.jpg";
+import batch2_27 from "@/assets/mobile-batch2-27.jpg";
+
 const mobileWallpapers = [
-  // Newest first
+  // Newest first (Batch 2)
+  { src: batch2_1, alt: "Batch 2 wallpaper 1", filename: "standard-mobile-batch2-01.jpg" },
+  { src: batch2_2, alt: "Batch 2 wallpaper 2", filename: "standard-mobile-batch2-02.jpg" },
+  { src: batch2_3, alt: "Batch 2 wallpaper 3", filename: "standard-mobile-batch2-03.jpg" },
+  { src: batch2_4, alt: "Batch 2 wallpaper 4", filename: "standard-mobile-batch2-04.jpg" },
+  { src: batch2_5, alt: "Batch 2 wallpaper 5", filename: "standard-mobile-batch2-05.jpg" },
+  { src: batch2_6, alt: "Batch 2 wallpaper 6", filename: "standard-mobile-batch2-06.jpg" },
+  { src: batch2_7, alt: "Batch 2 wallpaper 7", filename: "standard-mobile-batch2-07.jpg" },
+  { src: batch2_8, alt: "Batch 2 wallpaper 8", filename: "standard-mobile-batch2-08.jpg" },
+  { src: batch2_9, alt: "Batch 2 wallpaper 9", filename: "standard-mobile-batch2-09.jpg" },
+  { src: batch2_10, alt: "Batch 2 wallpaper 10", filename: "standard-mobile-batch2-10.jpg" },
+  { src: batch2_11, alt: "Batch 2 wallpaper 11", filename: "standard-mobile-batch2-11.jpg" },
+  { src: batch2_12, alt: "Batch 2 wallpaper 12", filename: "standard-mobile-batch2-12.jpg" },
+  { src: batch2_13, alt: "Batch 2 wallpaper 13", filename: "standard-mobile-batch2-13.jpg" },
+  { src: batch2_14, alt: "Batch 2 wallpaper 14", filename: "standard-mobile-batch2-14.jpg" },
+  { src: batch2_15, alt: "Batch 2 wallpaper 15", filename: "standard-mobile-batch2-15.jpg" },
+  { src: batch2_16, alt: "Batch 2 wallpaper 16", filename: "standard-mobile-batch2-16.jpg" },
+  { src: batch2_17, alt: "Batch 2 wallpaper 17", filename: "standard-mobile-batch2-17.jpg" },
+  { src: batch2_18, alt: "Batch 2 wallpaper 18", filename: "standard-mobile-batch2-18.jpg" },
+  { src: batch2_19, alt: "Batch 2 wallpaper 19", filename: "standard-mobile-batch2-19.jpg" },
+  { src: batch2_20, alt: "Batch 2 wallpaper 20", filename: "standard-mobile-batch2-20.jpg" },
+  { src: batch2_21, alt: "Batch 2 wallpaper 21", filename: "standard-mobile-batch2-21.jpg" },
+  { src: batch2_22, alt: "Batch 2 wallpaper 22", filename: "standard-mobile-batch2-22.jpg" },
+  { src: batch2_23, alt: "Batch 2 wallpaper 23", filename: "standard-mobile-batch2-23.jpg" },
+  { src: batch2_24, alt: "Batch 2 wallpaper 24", filename: "standard-mobile-batch2-24.jpg" },
+  { src: batch2_25, alt: "Batch 2 wallpaper 25", filename: "standard-mobile-batch2-25.jpg" },
+  { src: batch2_26, alt: "Batch 2 wallpaper 26", filename: "standard-mobile-batch2-26.jpg" },
+  { src: batch2_27, alt: "Batch 2 wallpaper 27", filename: "standard-mobile-batch2-27.jpg" },
+
+  // Previous (Batch 1)
   { src: bulk1, alt: "Aesthetic wallpaper 1", filename: "standard-mobile-01.jfif" },
   { src: bulk2, alt: "Aesthetic wallpaper 2", filename: "standard-mobile-02.jfif" },
   { src: bulk3, alt: "Aesthetic wallpaper 3", filename: "standard-mobile-03.jfif" },
