@@ -66,16 +66,20 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
             <header className="z-10 xl:top-4 relative">
                 <div className="mx-6">
                     <div className="flex items-center justify-between pt-4">
-                        <Link to="/" className="hover:opacity-80 transition-opacity relative z-50">
+                        <Link
+                            to="/"
+                            className="relative z-50 group hover:opacity-80 transition-opacity cursor-pointer"
+                            aria-label="Go to Home"
+                        >
                             {logoUrl ? (
                                 <div
                                     className="inline-flex items-center justify-center bg-center w-[100px] h-[40px] bg-cover rounded"
                                     style={{ backgroundImage: `url(${logoUrl})` }}
                                 />
                             ) : (
-                                <span className="text-xs font-medium tracking-[0.3em] text-white/90 uppercase">
+                                <button className="text-xs font-medium tracking-[0.3em] text-white/90 uppercase bg-transparent border-none p-0 cursor-pointer focus:outline-none">
                                     Standard
-                                </span>
+                                </button>
                             )}
                         </Link>
 
