@@ -4,8 +4,8 @@ import wallpaper1 from "@/assets/wallpaper-1.jpg";
 const Index = () => {
   return (
     <ResponsiveHeroBanner
-      backgroundImageUrl={wallpaper1}
-      title="Wallpapers"
+      backgroundImageUrl="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0e2dbea0-c0a9-413f-a57b-af279633c0df_3840w.jpg"
+      title="STANDARD"
       titleLine2=""
       description="Curated for desktop & mobile"
       badgeLabel=""
