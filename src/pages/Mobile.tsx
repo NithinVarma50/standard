@@ -11,12 +11,12 @@ import mobileWallpaper5 from "@/assets/mobile-wallpaper-5.jpg";
 import mobileWallpaper6 from "@/assets/mobile-wallpaper-6.jpg";
 
 const mobileWallpapers = [
+  { src: mobileWallpaper6, alt: "Penguin on ice", filename: "standard-mobile-penguin.jpg" },
   { src: mobileWallpaper1, alt: "Mountain peak in clouds", filename: "standard-mobile-mountain.jpg" },
   { src: mobileWallpaper2, alt: "Desert sand dunes", filename: "standard-mobile-desert.jpg" },
   { src: mobileWallpaper3, alt: "Misty forest", filename: "standard-mobile-forest.jpg" },
   { src: mobileWallpaper4, alt: "Aurora borealis", filename: "standard-mobile-aurora.jpg" },
   { src: mobileWallpaper5, alt: "Ocean wave", filename: "standard-mobile-ocean.jpg" },
-  { src: mobileWallpaper6, alt: "Penguin on ice", filename: "standard-mobile-penguin.jpg" },
 ];
 
 const Mobile = () => {
