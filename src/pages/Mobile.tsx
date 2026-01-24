@@ -63,9 +63,11 @@ import batch2_24 from "@/assets/mobile-batch2-24.jpg";
 import batch2_25 from "@/assets/mobile-batch2-25.jpg";
 import batch2_26 from "@/assets/mobile-batch2-26.jpg";
 import batch2_27 from "@/assets/mobile-batch2-27.jpg";
+import batch2_28 from "@/assets/mobile-batch2-28.jpg";
 
 const mobileWallpapers = [
   // Newest first (Batch 2)
+  { src: batch2_28, alt: "Batch 2 wallpaper 28", filename: "standard-mobile-batch2-28.jpg" },
   { src: batch2_1, alt: "Batch 2 wallpaper 1", filename: "standard-mobile-batch2-01.jpg" },
   { src: batch2_2, alt: "Batch 2 wallpaper 2", filename: "standard-mobile-batch2-02.jpg" },
   { src: batch2_3, alt: "Batch 2 wallpaper 3", filename: "standard-mobile-batch2-03.jpg" },

@@ -50,7 +50,6 @@ import bulk38 from "@/assets/desktop-bulk-38.jpg";
 import bulk39 from "@/assets/desktop-bulk-39.jpg";
 import bulk40 from "@/assets/desktop-bulk-40.jpg";
 import bulk41 from "@/assets/desktop-bulk-41.jpg";
-import bulk42 from "@/assets/desktop-bulk-42.jpg";
 import bulk43 from "@/assets/desktop-bulk-43.jpg";
 import bulk44 from "@/assets/desktop-bulk-44.jpg";
 import bulk45 from "@/assets/desktop-bulk-45.jpg";
@@ -64,7 +63,6 @@ const desktopWallpapers = [
   { src: bulk45, alt: "Desktop wallpaper 45", filename: "standard-desktop-45.jpg" },
   { src: bulk44, alt: "Desktop wallpaper 44", filename: "standard-desktop-44.jpg" },
   { src: bulk43, alt: "Desktop wallpaper 43", filename: "standard-desktop-43.jpg" },
-  { src: bulk42, alt: "Desktop wallpaper 42", filename: "standard-desktop-42.jpg" },
   { src: bulk41, alt: "Desktop wallpaper 41", filename: "standard-desktop-41.jpg" },
   { src: bulk1, alt: "Desktop wallpaper 1", filename: "standard-desktop-01.jpg" },
   { src: bulk2, alt: "Desktop wallpaper 2", filename: "standard-desktop-02.jpg" },
