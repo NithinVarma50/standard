@@ -161,7 +161,7 @@ const Desktop = () => {
       <main className="px-6 md:px-12 lg:px-24 pt-24 pb-24">
         <section className="max-w-6xl mx-auto">
           <SectionLabel>Desktop</SectionLabel>
-          <div className="space-y-16 md:space-y-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {desktopWallpapers.map((wallpaper, index) => (
               <WallpaperCard
                 key={`desktop-${index}`}

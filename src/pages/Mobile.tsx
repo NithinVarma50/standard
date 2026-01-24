@@ -245,9 +245,9 @@ const Mobile = () => {
       </NavLink>
 
       <main className="px-6 md:px-12 lg:px-24 pt-24 pb-24">
-        <section className="max-w-md mx-auto">
+        <section className="max-w-7xl mx-auto">
           <SectionLabel>Mobile</SectionLabel>
-          <div className="space-y-16 md:space-y-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
             {mobileWallpapers.map((wallpaper, index) => (
               <WallpaperCard
                 key={`mobile-${index}`}
