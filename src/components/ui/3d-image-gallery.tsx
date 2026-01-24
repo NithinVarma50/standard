@@ -159,7 +159,7 @@ function FloatingCard({
         <group ref={groupRef} position={[position.x, position.y, position.z]}>
             <Plane
                 ref={meshRef}
-                args={[4, 5.4]}
+                args={[4.2, 5.6]}
                 onClick={handleClick}
                 onPointerOver={handlePointerOver}
                 onPointerOut={handlePointerOut}
@@ -258,7 +258,7 @@ function CardModal() {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={handleBackdropClick}>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={handleBackdropClick}>
             <div className="relative max-w-sm w-full mx-4">
                 <button onClick={handleClose} className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10">
                     <X className="w-8 h-8" />
@@ -389,6 +389,61 @@ function CardGalaxy() {
    Page/Component Export
    ========================= */
 
+function InnerGallery({ onClose }: { onClose: () => void }) {
+    const { selectedCard } = useCard()
+
+    return (
+        <div className="fixed inset-0 z-50 w-full h-screen relative overflow-hidden bg-black">
+            <StarfieldBackground />
+
+            <div className="absolute top-6 left-6 z-20 flex items-center gap-4">
+                <button
+                    onClick={onClose}
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm transition-colors"
+                    title="Exit 3D Mode"
+                >
+                    <ChevronLeft className="w-6 h-6" />
+                </button>
+                <div className="text-white">
+                    <h1 className="text-2xl font-bold">3D Stellar Gallery</h1>
+                    <p className="text-sm opacity-70 hidden sm:block">Drag to look around • Scroll to zoom • Click cards</p>
+                </div>
+            </div>
+
+            <Canvas
+                camera={{ position: [0, 0, 28], fov: 60 }}
+                className={`absolute inset-0 z-10 ${selectedCard ? 'pointer-events-none' : ''}`}
+                onCreated={({ gl }) => {
+                    gl.domElement.style.pointerEvents = "auto"
+                }}
+            >
+                <Suspense fallback={null}>
+                    <Environment preset="night" />
+                    <ambientLight intensity={0.4} />
+                    <pointLight position={[10, 10, 10]} intensity={0.6} />
+                    <pointLight position={[-10, -10, -10]} intensity={0.3} />
+                    <CardGalaxy />
+                    <OrbitControls
+                        enablePan
+                        enableZoom
+                        enableRotate
+                        minDistance={5}
+                        maxDistance={60}
+                        autoRotate={true}
+                        autoRotateSpeed={0.5}
+                        rotateSpeed={0.5}
+                        zoomSpeed={1.2}
+                        panSpeed={0.8}
+                        target={[0, 0, 0]}
+                    />
+                </Suspense>
+            </Canvas>
+
+            <CardModal />
+        </div>
+    )
+}
+
 export type WallpaperItem = {
     src: string;
     alt: string;
@@ -406,54 +461,7 @@ export default function StellarCardGallery({ wallpapers, onClose }: { wallpapers
 
     return (
         <CardProvider initialCards={cards}>
-            <div className="fixed inset-0 z-50 w-full h-screen relative overflow-hidden bg-black">
-                <StarfieldBackground />
-
-                <div className="absolute top-6 left-6 z-20 flex items-center gap-4">
-                    <button
-                        onClick={onClose}
-                        className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm transition-colors"
-                        title="Exit 3D Mode"
-                    >
-                        <ChevronLeft className="w-6 h-6" />
-                    </button>
-                    <div className="text-white">
-                        <h1 className="text-2xl font-bold">3D Stellar Gallery</h1>
-                        <p className="text-sm opacity-70 hidden sm:block">Drag to look around • Scroll to zoom • Click cards</p>
-                    </div>
-                </div>
-
-                <Canvas
-                    camera={{ position: [0, 0, 28], fov: 60 }}
-                    className="absolute inset-0 z-10"
-                    onCreated={({ gl }) => {
-                        gl.domElement.style.pointerEvents = "auto"
-                    }}
-                >
-                    <Suspense fallback={null}>
-                        <Environment preset="night" />
-                        <ambientLight intensity={0.4} />
-                        <pointLight position={[10, 10, 10]} intensity={0.6} />
-                        <pointLight position={[-10, -10, -10]} intensity={0.3} />
-                        <CardGalaxy />
-                        <OrbitControls
-                            enablePan
-                            enableZoom
-                            enableRotate
-                            minDistance={5}
-                            maxDistance={60}
-                            autoRotate={true}
-                            autoRotateSpeed={0.5}
-                            rotateSpeed={0.5}
-                            zoomSpeed={1.2}
-                            panSpeed={0.8}
-                            target={[0, 0, 0]}
-                        />
-                    </Suspense>
-                </Canvas>
-
-                <CardModal />
-            </div>
+            <InnerGallery onClose={onClose} />
         </CardProvider>
     )
 }
