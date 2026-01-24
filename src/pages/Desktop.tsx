@@ -55,9 +55,43 @@ import bulk44 from "@/assets/desktop-bulk-44.jpg";
 import bulk45 from "@/assets/desktop-bulk-45.jpg";
 import bulk46 from "@/assets/desktop-bulk-46.jpg";
 import bulk47 from "@/assets/desktop-bulk-47.jpg";
+import bulk48 from "@/assets/desktop-bulk-48.jpg";
+import bulk49 from "@/assets/desktop-bulk-49.jpg";
+import bulk50 from "@/assets/desktop-bulk-50.jpg";
+import bulk51 from "@/assets/desktop-bulk-51.jpg";
+import bulk52 from "@/assets/desktop-bulk-52.jpg";
+import bulk53 from "@/assets/desktop-bulk-53.jpg";
+import bulk54 from "@/assets/desktop-bulk-54.jpg";
+import bulk55 from "@/assets/desktop-bulk-55.jpg";
+import bulk56 from "@/assets/desktop-bulk-56.jpg";
+import bulk57 from "@/assets/desktop-bulk-57.jpg";
+import bulk58 from "@/assets/desktop-bulk-58.jpg";
+import bulk59 from "@/assets/desktop-bulk-59.jpg";
+import bulk60 from "@/assets/desktop-bulk-60.jpg";
+import bulk61 from "@/assets/desktop-bulk-61.jpg";
+import bulk62 from "@/assets/desktop-bulk-62.jpg";
+import bulk63 from "@/assets/desktop-bulk-63.jpg";
+import bulk64 from "@/assets/desktop-bulk-64.jpg";
 
 const desktopWallpapers = [
   // Newest first
+  { src: bulk64, alt: "Desktop wallpaper 64", filename: "standard-desktop-64.jpg" },
+  { src: bulk63, alt: "Desktop wallpaper 63", filename: "standard-desktop-63.jpg" },
+  { src: bulk62, alt: "Desktop wallpaper 62", filename: "standard-desktop-62.jpg" },
+  { src: bulk61, alt: "Desktop wallpaper 61", filename: "standard-desktop-61.jpg" },
+  { src: bulk60, alt: "Desktop wallpaper 60", filename: "standard-desktop-60.jpg" },
+  { src: bulk59, alt: "Desktop wallpaper 59", filename: "standard-desktop-59.jpg" },
+  { src: bulk58, alt: "Desktop wallpaper 58", filename: "standard-desktop-58.jpg" },
+  { src: bulk57, alt: "Desktop wallpaper 57", filename: "standard-desktop-57.jpg" },
+  { src: bulk56, alt: "Desktop wallpaper 56", filename: "standard-desktop-56.jpg" },
+  { src: bulk55, alt: "Desktop wallpaper 55", filename: "standard-desktop-55.jpg" },
+  { src: bulk54, alt: "Desktop wallpaper 54", filename: "standard-desktop-54.jpg" },
+  { src: bulk53, alt: "Desktop wallpaper 53", filename: "standard-desktop-53.jpg" },
+  { src: bulk52, alt: "Desktop wallpaper 52", filename: "standard-desktop-52.jpg" },
+  { src: bulk51, alt: "Desktop wallpaper 51", filename: "standard-desktop-51.jpg" },
+  { src: bulk50, alt: "Desktop wallpaper 50", filename: "standard-desktop-50.jpg" },
+  { src: bulk49, alt: "Desktop wallpaper 49", filename: "standard-desktop-49.jpg" },
+  { src: bulk48, alt: "Desktop wallpaper 48", filename: "standard-desktop-48.jpg" },
   { src: bulk47, alt: "Desktop wallpaper 47", filename: "standard-desktop-47.jpg" },
   { src: bulk46, alt: "Desktop wallpaper 46", filename: "standard-desktop-46.jpg" },
   { src: bulk45, alt: "Desktop wallpaper 45", filename: "standard-desktop-45.jpg" },
