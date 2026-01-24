@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Desktop from "./pages/Desktop";
 import Mobile from "./pages/Mobile";
+import Preview from "./pages/Preview";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/desktop" element={<Desktop />} />
           <Route path="/mobile" element={<Mobile />} />
+          <Route path="/preview" element={<Preview />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

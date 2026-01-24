@@ -1,6 +1,7 @@
 "use client"
 
 import React, { Suspense, useEffect, useMemo, useRef, useState, createContext, useContext } from "react"
+import { useNavigate } from "react-router-dom"
 import * as THREE from "three"
 import { Canvas, useFrame } from "@react-three/fiber"
 import {
@@ -10,7 +11,7 @@ import {
     Plane,
     Sphere,
 } from "@react-three/drei"
-import { Download, Heart, X, ChevronLeft } from "lucide-react"
+import { Download, Heart, X, ChevronLeft, Eye } from "lucide-react"
 
 /**
  * Single-file Stellar Card Gallery
@@ -114,7 +115,7 @@ function StarfieldBackground() {
         }
     }, [])
 
-    return <div ref={mountRef} className="fixed top-0 left-0 w-full h-full z-0 bg-black" />
+    return <div ref={mountRef} className="fixed top-0 left-0 w-full h-full z-0 bg-black pointer-events-none" />
 }
 
 /* =========================
@@ -158,7 +159,7 @@ function FloatingCard({
         <group ref={groupRef} position={[position.x, position.y, position.z]}>
             <Plane
                 ref={meshRef}
-                args={[4.5, 6]}
+                args={[4, 5.4]}
                 onClick={handleClick}
                 onPointerOver={handlePointerOver}
                 onPointerOut={handlePointerOut}
@@ -209,6 +210,7 @@ function CardModal() {
     const { selectedCard, setSelectedCard } = useCard()
     const [isFavorited, setIsFavorited] = useState(false)
     const cardRef = useRef<HTMLDivElement>(null)
+    const navigate = useNavigate()
 
     if (!selectedCard) return null
 
@@ -257,7 +259,7 @@ function CardModal() {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={handleBackdropClick}>
-            <div className="relative max-w-md w-full mx-4">
+            <div className="relative max-w-sm w-full mx-4">
                 <button onClick={handleClose} className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10">
                     <X className="w-8 h-8" />
                 </button>
@@ -290,13 +292,20 @@ function CardModal() {
                         <div className="flex gap-2">
                             <button
                                 type="button"
-                                onClick={handleDownload}
+                                onClick={() => {
+                                    const params = new URLSearchParams({
+                                        src: selectedCard.imageUrl,
+                                        alt: selectedCard.alt,
+                                        filename: selectedCard.filename
+                                    });
+                                    navigate(`/preview?${params.toString()}`);
+                                }}
                                 className="inline-flex h-9 flex-1 items-center justify-center rounded-lg text-base font-medium text-black outline-none transition duration-300 ease-out hover:opacity-80 active:scale-[0.97]"
                                 style={{ backgroundColor: "#31b8c6" }}
                             >
                                 <div className="flex items-center gap-1.5">
-                                    <Download className="h-4 w-4" strokeWidth={1.8} />
-                                    <span>Download</span>
+                                    <Eye className="h-4 w-4" strokeWidth={1.8} />
+                                    <span>Preview</span>
                                 </div>
                             </button>
                             {/* <button
