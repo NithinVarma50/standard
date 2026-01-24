@@ -189,7 +189,7 @@ function FloatingCard({
                         src={card.imageUrl || "/placeholder.svg"}
                         alt={card.alt}
                         className="w-full h-40 object-cover rounded-md"
-                        loading="lazy"
+                        loading="eager"
                         draggable={false}
                     />
                     <div className="mt-1 text-center">
@@ -340,7 +340,7 @@ function CardGalaxy() {
             const theta = (2 * Math.PI * i) / goldenRatio
             const x = Math.cos(theta) * radiusAtY
             const z = Math.sin(theta) * radiusAtY
-            const layerRadius = 12 + (i % 3) * 4
+            const layerRadius = 15 + (i % 3) * 8
 
             positions.push({
                 x: x * layerRadius,
@@ -415,7 +415,7 @@ export default function StellarCardGallery({ wallpapers, onClose }: { wallpapers
                 </div>
 
                 <Canvas
-                    camera={{ position: [0, 0, 15], fov: 60 }}
+                    camera={{ position: [0, 0, 28], fov: 60 }}
                     className="absolute inset-0 z-10"
                     onCreated={({ gl }) => {
                         gl.domElement.style.pointerEvents = "auto"
@@ -432,7 +432,7 @@ export default function StellarCardGallery({ wallpapers, onClose }: { wallpapers
                             enableZoom
                             enableRotate
                             minDistance={5}
-                            maxDistance={40}
+                            maxDistance={60}
                             autoRotate={true}
                             autoRotateSpeed={0.5}
                             rotateSpeed={0.5}

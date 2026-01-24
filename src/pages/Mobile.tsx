@@ -111,7 +111,6 @@ import batch3_39 from "@/assets/mobile-batch3-39.jpg";
 import batch3_40 from "@/assets/mobile-batch3-40.jpg";
 import batch3_41 from "@/assets/mobile-batch3-41.jpg";
 import batch3_42 from "@/assets/mobile-batch3-42.jpg";
-import batch3_43 from "@/assets/mobile-batch3-43.jpg";
 import batch3_44 from "@/assets/mobile-batch3-44.jpg";
 import batch3_45 from "@/assets/mobile-batch3-45.jpg";
 import batch3_46 from "@/assets/mobile-batch3-46.jpg";
@@ -127,7 +126,6 @@ const mobileWallpapers = [
   { src: batch3_46, alt: "Batch 3 wallpaper 46", filename: "standard-mobile-batch3-46.jpg" },
   { src: batch3_45, alt: "Batch 3 wallpaper 45", filename: "standard-mobile-batch3-45.jpg" },
   { src: batch3_44, alt: "Batch 3 wallpaper 44", filename: "standard-mobile-batch3-44.jpg" },
-  { src: batch3_43, alt: "Batch 3 wallpaper 43", filename: "standard-mobile-batch3-43.jpg" },
   { src: batch3_42, alt: "Batch 3 wallpaper 42", filename: "standard-mobile-batch3-42.jpg" },
   { src: batch3_41, alt: "Batch 3 wallpaper 41", filename: "standard-mobile-batch3-41.jpg" },
   { src: batch3_40, alt: "Batch 3 wallpaper 40", filename: "standard-mobile-batch3-40.jpg" },
