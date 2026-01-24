@@ -9,21 +9,67 @@ interface WallpaperCardProps {
 
 const WallpaperCard = ({ src, alt, filename }: WallpaperCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [imgError, setImgError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleDownload = async () => {
+    // isDownloading state could be added here if needed, but do not use isLoading as it hides the image
     try {
-      const response = await fetch(src);
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.src = src;
+
+      await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+
+      const canvas = document.createElement("canvas");
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      const ctx = canvas.getContext("2d");
+
+      if (!ctx) throw new Error("Could not get canvas context");
+
+      // Fill background with white in case of transparency
+      ctx.fillStyle = "#FFFFFF";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0);
+
+      canvas.toBlob(
+        (blob) => {
+          if (!blob) throw new Error("Could not create blob");
+          const url = window.URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          // Ensure extension is .jpg
+          const downloadName = filename.replace(/\.[^/.]+$/, "") + ".jpg";
+          link.download = downloadName;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(url);
+        },
+        "image/jpeg",
+        1.0 // Maximum quality
+      );
     } catch (error) {
       console.error("Download failed:", error);
+      // Fallback to simple download if canvas fails
+      try {
+        const response = await fetch(src);
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      } catch (fallbackError) {
+        console.error("Fallback download failed:", fallbackError);
+      }
     }
   };
 
@@ -43,15 +89,32 @@ const WallpaperCard = ({ src, alt, filename }: WallpaperCardProps) => {
         }}
       >
         <img
-          src={src}
+          src={imgError ? "/placeholder.svg" : src}
           alt={alt}
-          className="w-full h-auto object-cover transition-all duration-300 ease-apple"
+          className={`w-full h-auto object-cover transition-all duration-300 ease-apple ${isLoading ? "opacity-0" : "opacity-100"
+            }`}
           style={{
-            opacity: isHovered ? 1 : 0.92,
             filter: isHovered ? "brightness(1)" : "brightness(0.95)",
+            ...(imgError ? { objectFit: "contain", padding: "2rem", backgroundColor: "#f3f4f6" } : {})
           }}
           loading="lazy"
+          onLoad={() => setIsLoading(false)}
+          onError={(e) => {
+            console.error("Image load error:", src);
+            setImgError(true);
+            setIsLoading(false);
+          }}
         />
+
+        {isLoading && !imgError && (
+          <div className="absolute inset-0 bg-muted/20 animate-pulse" />
+        )}
+
+        {imgError && (
+          <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-sm">
+            Failed to load image
+          </div>
+        )}
 
         {/* Download button with ghost curtain animation */}
         <div
