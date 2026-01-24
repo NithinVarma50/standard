@@ -94,7 +94,6 @@ const WallpaperCard = ({ src, alt, filename }: WallpaperCardProps) => {
           className={`w-full h-auto object-cover transition-all duration-300 ease-apple ${isLoading ? "opacity-0" : "opacity-100"
             }`}
           style={{
-            filter: isHovered ? "brightness(1)" : "brightness(0.95)",
             ...(imgError ? { objectFit: "contain", padding: "2rem", backgroundColor: "#f3f4f6" } : {})
           }}
           loading="lazy"
