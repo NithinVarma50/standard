@@ -2,6 +2,9 @@ import Logo from "@/components/Logo";
 import WallpaperCard from "@/components/WallpaperCard";
 import SectionLabel from "@/components/SectionLabel";
 import { NavLink } from "@/components/NavLink";
+import StellarCardGallery from "@/components/ui/3d-image-gallery";
+import { useState } from "react";
+import { Box } from "lucide-react";
 
 import mobileWallpaper1 from "@/assets/mobile-wallpaper-1.jpg";
 import mobileWallpaper2 from "@/assets/mobile-wallpaper-2.jpg";
@@ -233,6 +236,8 @@ const mobileWallpapers = [
 ];
 
 const Mobile = () => {
+  const [is3DMode, setIs3DMode] = useState(false);
+
   return (
     <div className="min-h-screen bg-background relative isolate">
       {/* Modern Minimalist Background */}
@@ -244,21 +249,34 @@ const Mobile = () => {
         Desktop
       </NavLink>
 
-      <main className="px-6 md:px-12 lg:px-24 pt-24 pb-24">
-        <section className="max-w-7xl mx-auto">
-          <SectionLabel>Mobile</SectionLabel>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
-            {mobileWallpapers.map((wallpaper, index) => (
-              <WallpaperCard
-                key={`mobile-${index}`}
-                src={wallpaper.src}
-                alt={wallpaper.alt}
-                filename={wallpaper.filename}
-              />
-            ))}
-          </div>
-        </section>
-      </main>
+      {is3DMode ? (
+        <StellarCardGallery wallpapers={mobileWallpapers} onClose={() => setIs3DMode(false)} />
+      ) : (
+        <main className="px-6 md:px-12 lg:px-24 pt-24 pb-24">
+          <section className="max-w-7xl mx-auto">
+            <div className="flex items-center justify-between mb-8">
+              <SectionLabel>Mobile</SectionLabel>
+              <button
+                onClick={() => setIs3DMode(true)}
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white/80 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all backdrop-blur-sm"
+              >
+                <Box className="w-4 h-4" />
+                <span>View in 3D</span>
+              </button>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
+              {mobileWallpapers.map((wallpaper, index) => (
+                <WallpaperCard
+                  key={`mobile-${index}`}
+                  src={wallpaper.src}
+                  alt={wallpaper.alt}
+                  filename={wallpaper.filename}
+                />
+              ))}
+            </div>
+          </section>
+        </main>
+      )}
     </div>
   );
 };
