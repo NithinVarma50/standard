@@ -21,8 +21,8 @@ import { Check, Loader2, SendHorizontal, X, Download } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button, ButtonProps } from "@/components/ui/button"
 
-const DRAG_CONSTRAINTS = { left: 0, right: 155 }
-const DRAG_THRESHOLD = 0.9
+const DRAG_CONSTRAINTS = { left: 0, right: 150 }
+const DRAG_THRESHOLD = 0.85
 
 const BUTTON_STATES = {
     initial: { width: "12rem" },
@@ -31,8 +31,8 @@ const BUTTON_STATES = {
 
 const ANIMATION_CONFIG = {
     spring: {
-        stiffness: 400,
-        damping: 40,
+        stiffness: 300,
+        damping: 30,
         mass: 0.8,
     },
 }
@@ -154,8 +154,8 @@ const SlideButton = forwardRef<HTMLButtonElement, SlideButtonProps>(
                             onDragStart={handleDragStart}
                             onDragEnd={handleDragEnd}
                             onDrag={handleDrag}
-                            style={{ x: springX }}
-                            className="absolute -left-4 z-10 flex cursor-grab items-center justify-start active:cursor-grabbing"
+                            style={{ x: springX, touchAction: "none" }}
+                            className="absolute -left-4 z-10 flex cursor-grab items-center justify-start active:cursor-grabbing p-2"
                         >
                             <Button
                                 ref={ref}
