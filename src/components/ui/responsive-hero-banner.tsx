@@ -15,6 +15,8 @@ interface Partner {
     href: string;
 }
 
+import SlideButton from './slide-button';
+
 interface ResponsiveHeroBannerProps {
     logoUrl?: string;
     backgroundImageUrl?: string;
@@ -32,6 +34,8 @@ interface ResponsiveHeroBannerProps {
     secondaryButtonHref?: string;
     partnersTitle?: string;
     partners?: Partner[];
+    showPwaInstall?: boolean;
+    onPwaInstall?: () => void;
 }
 
 const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
@@ -50,7 +54,9 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
     secondaryButtonText,
     secondaryButtonHref = "#",
     partnersTitle,
-    partners = []
+    partners = [],
+    showPwaInstall = false,
+    onPwaInstall
 }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -108,6 +114,12 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                                     )}
                                 </div>
                             )}
+
+                            {showPwaInstall && (
+                                <div className="ml-4">
+                                    <SlideButton onSlideSuccess={onPwaInstall} className="scale-90" />
+                                </div>
+                            )}
                         </nav>
 
                         <button
@@ -152,6 +164,15 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                             {ctaButtonText}
                             <ArrowRight className="h-6 w-6" />
                         </Link>
+                    )}
+
+                    {showPwaInstall && (
+                        <div className="mt-8">
+                            <SlideButton onSlideSuccess={() => {
+                                if (onPwaInstall) onPwaInstall();
+                                setMobileMenuOpen(false);
+                            }} />
+                        </div>
                     )}
                 </div>
             )}

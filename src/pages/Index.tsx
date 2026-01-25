@@ -1,7 +1,7 @@
 import ResponsiveHeroBanner from "@/components/ui/responsive-hero-banner";
 import { Features } from "@/components/Features";
 import { Footer } from "@/components/Footer";
-import SlideButton from "@/components/ui/slide-button";
+
 import { useEffect, useState } from "react";
 
 const Index = () => {
@@ -46,19 +46,13 @@ const Index = () => {
             { label: "Desktop", href: "/desktop" },
             { label: "Mobile", href: "/mobile" },
           ]}
+          showPwaInstall={showInstall}
+          onPwaInstall={handleInstall}
           partners={[]}
           partnersTitle=""
           ctaButtonText=""
           logoUrl=""
         />
-        {/* PWA Install Slide Button - Floating mobile-friendly position */}
-        {showInstall && (
-          <div className="absolute bottom-24 left-0 right-0 flex justify-center z-50 md:bottom-32 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            <div className="scale-90 md:scale-100">
-              <SlideButton onSlideSuccess={handleInstall} />
-            </div>
-          </div>
-        )}
       </div>
 
       <Features />

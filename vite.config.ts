@@ -29,8 +29,20 @@ export default defineConfig(({ mode }) => ({
         orientation: 'portrait',
         icons: [
           {
-            src: 'og-image.png', // Temporary placeholder using existing asset
-            sizes: '1200x630',   // Actual size of og-image, though usually squares are expected. browsers might crop.
+            src: 'og-image.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any maskable'
+          },
+          {
+            src: 'og-image.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable'
+          },
+          {
+            src: 'og-image.png',
+            sizes: '1200x630',
             type: 'image/png'
           }
         ]
