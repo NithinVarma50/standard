@@ -135,7 +135,7 @@ const batch4Wallpapers = Array.from({ length: 28 }, (_, i) => {
   };
 }).reverse();
 
-const mobileWallpapers = [
+export const mobileWallpapers = [
   // Newest first (Batch 5)
   ...batch5Wallpapers,
 

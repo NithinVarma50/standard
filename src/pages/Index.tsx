@@ -4,6 +4,10 @@ import { Footer } from "@/components/Footer";
 
 import { useEffect, useState } from "react";
 
+import { Counter } from "@/components/ui/counter";
+import { desktopWallpapers } from "./Desktop";
+import { mobileWallpapers } from "./Mobile";
+
 const Index = () => {
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showInstall, setShowInstall] = useState(false);
@@ -52,6 +56,13 @@ const Index = () => {
           partnersTitle=""
           ctaButtonText=""
           logoUrl=""
+          stats={
+            <>
+              <Counter to={desktopWallpapers.length} label="Desktop" delay={0.5} />
+              <div className="h-12 w-px bg-white/20" />
+              <Counter to={mobileWallpapers.length} label="Mobile" delay={0.7} />
+            </>
+          }
         />
       </div>
 

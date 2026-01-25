@@ -36,6 +36,7 @@ interface ResponsiveHeroBannerProps {
     partners?: Partner[];
     showPwaInstall?: boolean;
     onPwaInstall?: () => void;
+    stats?: React.ReactNode;
 }
 
 const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
@@ -56,7 +57,8 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
     partnersTitle,
     partners = [],
     showPwaInstall = false,
-    onPwaInstall
+    onPwaInstall,
+    stats
 }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -227,6 +229,12 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                                 </Link>
                             )}
                         </div>
+
+                        {stats && (
+                            <div className="mt-12 animate-fade-slide-in-4 flex items-center justify-center gap-8 border-t border-white/10 pt-8 max-w-lg mx-auto">
+                                {stats}
+                            </div>
+                        )}
                     </div>
 
                     {partners && partners.length > 0 && (
