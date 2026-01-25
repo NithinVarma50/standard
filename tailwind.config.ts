@@ -80,12 +80,20 @@ export default {
           from: { opacity: "1" },
           to: { opacity: "0" },
         },
+        flip: {
+          to: { transform: "rotate(360deg)" },
+        },
+        rotate: {
+          to: { transform: "rotate(90deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.3s ease-out",
         "fade-out": "fade-out 0.3s ease-out",
+        flip: "flip 6s infinite steps(2, end)",
+        rotate: "rotate 3s linear infinite both",
         "fade-slide-in-1": "fadeSlideIn 0.5s ease-out 0.1s forwards",
         "fade-slide-in-2": "fadeSlideIn 0.5s ease-out 0.2s forwards",
         "fade-slide-in-3": "fadeSlideIn 0.5s ease-out 0.3s forwards",

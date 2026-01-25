@@ -15,7 +15,7 @@ interface Partner {
     href: string;
 }
 
-import SlideButton from './slide-button';
+import { SaveButton } from './save-button';
 
 interface ResponsiveHeroBannerProps {
     logoUrl?: string;
@@ -117,7 +117,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
 
                             {showPwaInstall && (
                                 <div className="ml-4">
-                                    <SlideButton onSlideSuccess={onPwaInstall} className="scale-90" />
+                                    <SaveButton onSave={onPwaInstall} className="scale-90" />
                                 </div>
                             )}
                         </nav>
@@ -168,8 +168,8 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
 
                     {showPwaInstall && (
                         <div className="mt-8">
-                            <SlideButton onSlideSuccess={() => {
-                                if (onPwaInstall) onPwaInstall();
+                            <SaveButton onSave={async () => {
+                                if (onPwaInstall) await onPwaInstall();
                                 setMobileMenuOpen(false);
                             }} />
                         </div>

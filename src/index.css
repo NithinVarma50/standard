@@ -11,19 +11,28 @@
 @layer base {
   :root {
     /* Core colors - near black background */
-    --background: 240 6% 4%; /* #09090b */
-    --foreground: 0 0% 98%; /* #fafafa */
+    --background: 240 6% 4%;
+    /* #09090b */
+    --foreground: 0 0% 98%;
+    /* #fafafa */
 
     /* Surface colors */
-    --bg-100: 240 6% 9%; /* #18181b */
-    --bg-200: 240 5% 15%; /* #27272a */
-    --bg-300: 240 4% 26%; /* #3f3f46 */
+    --bg-100: 240 6% 9%;
+    /* #18181b */
+    --bg-200: 240 5% 15%;
+    /* #27272a */
+    --bg-300: 240 4% 26%;
+    /* #3f3f46 */
 
     /* Text hierarchy */
-    --text-100: 0 0% 98%; /* #fafafa */
-    --text-200: 240 5% 90%; /* #e4e4e7 */
-    --text-300: 240 4% 66%; /* #a1a1aa */
-    --text-400: 240 4% 46%; /* #71717a */
+    --text-100: 0 0% 98%;
+    /* #fafafa */
+    --text-200: 240 5% 90%;
+    /* #e4e4e7 */
+    --text-300: 240 4% 66%;
+    /* #a1a1aa */
+    --text-400: 240 4% 46%;
+    /* #71717a */
 
     --card: 240 6% 9%;
     --card-foreground: 0 0% 98%;
@@ -45,6 +54,9 @@
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
+
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 0 0% 100%;
 
     --border: 240 4% 26%;
     --input: 240 4% 26%;
@@ -82,6 +94,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
