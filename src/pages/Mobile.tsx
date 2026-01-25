@@ -115,8 +115,22 @@ import batch3_47 from "@/assets/mobile-batch3-47.jpg";
 import batch3_48 from "@/assets/mobile-batch3-48.jpg";
 import batch3_49 from "@/assets/mobile-batch3-49.jpg";
 
+// Batch 4 generation (28 images)
+const batch4Wallpapers = Array.from({ length: 28 }, (_, i) => {
+  const num = i + 1;
+  return {
+    src: new URL(`../assets/mobile-batch4-${num}.jpg`, import.meta.url).href,
+    alt: `Batch 4 wallpaper ${num}`,
+    filename: `standard-mobile-batch4-${num}.jpg`
+  };
+}).reverse();
+
 const mobileWallpapers = [
-  // Newest first (Batch 3)
+  // Newest first (Batch 4)
+  ...batch4Wallpapers,
+
+  // Batch 3
+
   { src: batch3_49, alt: "Batch 3 wallpaper 49", filename: "standard-mobile-batch3-49.jpg" },
   { src: batch3_48, alt: "Batch 3 wallpaper 48", filename: "standard-mobile-batch3-48.jpg" },
   { src: batch3_47, alt: "Batch 3 wallpaper 47", filename: "standard-mobile-batch3-47.jpg" },
