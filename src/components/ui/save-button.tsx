@@ -61,17 +61,21 @@ export function SaveButton({
 
     const buttonVariants = {
         idle: {
-            backgroundColor: isDark ? "rgb(64, 64, 64)" : "rgb(243, 244, 246)",
-            color: isDark ? "white" : "black",
-            scale: 1,
-        },
-        saving: {
-            backgroundColor: "rgb(59, 130, 246)",
+            backgroundColor: "rgba(0,0,0,0.6)",
             color: "white",
             scale: 1,
+            backdropFilter: "blur(12px)",
+            border: "1px solid rgba(255,255,255,0.1)",
+        },
+        saving: {
+            backgroundColor: "rgba(0,0,0,0.8)",
+            color: "white",
+            scale: 1,
+            backdropFilter: "blur(12px)",
+            border: "1px solid rgba(255,255,255,0.1)",
         },
         saved: {
-            backgroundColor: "rgb(34, 197, 94)",
+            backgroundColor: "rgba(34, 197, 94, 0.9)",
             color: "white",
             scale: [1, 1.1, 1],
             transition: {
@@ -96,9 +100,9 @@ export function SaveButton({
                 className={cn(
                     "group relative grid overflow-hidden rounded-full px-6 py-2 transition-all duration-200",
                     status === "idle"
-                        ? "shadow-[0_1000px_0_0_hsl(0_0%_85%)_inset] dark:shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset]"
+                        ? "shadow-lg bg-black/60 backdrop-blur-md border border-white/10"
                         : "",
-                    "hover:shadow-lg",
+                    "hover:bg-black/80 hover:scale-105",
                     className
                 )}
                 style={{ minWidth: "150px" }}
@@ -110,9 +114,9 @@ export function SaveButton({
                         <span
                             className={cn(
                                 "spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full",
-                                "[mask:linear-gradient(black,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:bg-[conic-gradient(from_0deg,transparent_0_340deg,black_360deg)]",
-                                "before:rotate-[-90deg] before:animate-rotate dark:before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)]",
-                                "before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%] dark:[mask:linear-gradient(white,_transparent_50%)]",
+                                "[mask:linear-gradient(black,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)]",
+                                "before:rotate-[-90deg] before:animate-rotate",
+                                "before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]",
                             )}
                         />
                     </span>
@@ -121,7 +125,7 @@ export function SaveButton({
                     className={cn(
                         "backdrop absolute inset-px rounded-[22px] transition-colors duration-200",
                         status === "idle"
-                            ? "bg-neutral-100 group-hover:bg-neutral-200 dark:bg-neutral-950 dark:group-hover:bg-neutral-900"
+                            ? "bg-black/40 group-hover:bg-black/60"
                             : "",
                     )}
                 />
