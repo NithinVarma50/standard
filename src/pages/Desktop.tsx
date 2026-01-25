@@ -73,8 +73,21 @@ import bulk62 from "@/assets/desktop-bulk-62.jpg";
 import bulk63 from "@/assets/desktop-bulk-63.jpg";
 import bulk64 from "@/assets/desktop-bulk-64.jpg";
 
+// Batch 3 generation (17 images: 65-81)
+const batch3Wallpapers = Array.from({ length: 17 }, (_, i) => {
+  const num = i + 65;
+  return {
+    src: new URL(`../assets/desktop-bulk-${num}.jpg`, import.meta.url).href,
+    alt: `Desktop wallpaper ${num}`,
+    filename: `standard-desktop-${num}.jpg`
+  };
+}).reverse();
+
 const desktopWallpapers = [
-  // Newest first
+  // Newest first (Batch 3)
+  ...batch3Wallpapers,
+
+  // Batch 2 (Manual imports)
   { src: bulk64, alt: "Desktop wallpaper 64", filename: "standard-desktop-64.jpg" },
   { src: bulk63, alt: "Desktop wallpaper 63", filename: "standard-desktop-63.jpg" },
   { src: bulk62, alt: "Desktop wallpaper 62", filename: "standard-desktop-62.jpg" },
