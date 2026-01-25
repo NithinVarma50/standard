@@ -115,6 +115,16 @@ import batch3_47 from "@/assets/mobile-batch3-47.jpg";
 import batch3_48 from "@/assets/mobile-batch3-48.jpg";
 import batch3_49 from "@/assets/mobile-batch3-49.jpg";
 
+// Batch 5 generation (13 images)
+const batch5Wallpapers = Array.from({ length: 13 }, (_, i) => {
+  const num = i + 1;
+  return {
+    src: new URL(`../assets/mobile-batch5-${num}.jpg`, import.meta.url).href,
+    alt: `Batch 5 wallpaper ${num}`,
+    filename: `standard-mobile-batch5-${num}.jpg`
+  };
+}).reverse();
+
 // Batch 4 generation (28 images)
 const batch4Wallpapers = Array.from({ length: 28 }, (_, i) => {
   const num = i + 1;
@@ -126,7 +136,10 @@ const batch4Wallpapers = Array.from({ length: 28 }, (_, i) => {
 }).reverse();
 
 const mobileWallpapers = [
-  // Newest first (Batch 4)
+  // Newest first (Batch 5)
+  ...batch5Wallpapers,
+
+  // Batch 4
   ...batch4Wallpapers,
 
   // Batch 3

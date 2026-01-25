@@ -73,9 +73,9 @@ import bulk62 from "@/assets/desktop-bulk-62.jpg";
 import bulk63 from "@/assets/desktop-bulk-63.jpg";
 import bulk64 from "@/assets/desktop-bulk-64.jpg";
 
-// Batch 3 generation (17 images: 65-81)
-const batch3Wallpapers = Array.from({ length: 17 }, (_, i) => {
-  const num = i + 65;
+// Batch 3 generation (16 images: 66-81) - 65 removed by request
+const batch3Wallpapers = Array.from({ length: 16 }, (_, i) => {
+  const num = i + 66;
   return {
     src: new URL(`../assets/desktop-bulk-${num}.jpg`, import.meta.url).href,
     alt: `Desktop wallpaper ${num}`,
