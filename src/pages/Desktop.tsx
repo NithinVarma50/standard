@@ -73,6 +73,16 @@ import bulk62 from "@/assets/desktop-bulk-62.jpg";
 import bulk63 from "@/assets/desktop-bulk-63.jpg";
 import bulk64 from "@/assets/desktop-bulk-64.jpg";
 
+// Batch 5 generation (18 images: 88-105)
+const batch5Wallpapers = Array.from({ length: 18 }, (_, i) => {
+  const num = i + 88;
+  return {
+    src: new URL(`../assets/desktop-bulk-${num}.jpg`, import.meta.url).href,
+    alt: `Desktop wallpaper ${num}`,
+    filename: `standard-desktop-${num}.jpg`
+  };
+}).reverse();
+
 // Batch 4 generation (6 images: 82-87)
 const batch4Wallpapers = Array.from({ length: 6 }, (_, i) => {
   const num = i + 82;
@@ -94,7 +104,10 @@ const batch3Wallpapers = Array.from({ length: 16 }, (_, i) => {
 }).reverse();
 
 export const desktopWallpapers = [
-  // Newest first (Batch 4)
+  // Newest first (Batch 5)
+  ...batch5Wallpapers,
+
+  // Batch 4
   ...batch4Wallpapers,
 
   // Batch 3
