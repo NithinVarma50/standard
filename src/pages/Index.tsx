@@ -50,8 +50,8 @@ const Index = () => {
             { label: "Desktop", href: "/desktop" },
             { label: "Mobile", href: "/mobile" },
           ]}
-          showPwaInstall={showInstall}
-          onPwaInstall={handleInstall}
+          showPwaInstall={true}
+          onPwaInstall={showInstall ? handleInstall : undefined}
           partners={[]}
           partnersTitle=""
           ctaButtonText=""
