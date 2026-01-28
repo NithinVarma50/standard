@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => ({
     mode === "development" && componentTagger(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'robots.txt', 'og-image.png'],
+      includeAssets: ['favicon.ico', 'robots.txt'],
       manifest: {
         name: 'Standard Wallpapers',
         short_name: 'Standard',

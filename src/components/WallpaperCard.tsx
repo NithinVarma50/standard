@@ -13,63 +13,28 @@ const WallpaperCard = ({ src, alt, filename }: WallpaperCardProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleDownload = async () => {
-    // isDownloading state could be added here if needed, but do not use isLoading as it hides the image
     try {
-      const img = new Image();
-      img.crossOrigin = "anonymous";
-      img.src = src;
+      const response = await fetch(src);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
 
-      await new Promise((resolve, reject) => {
-        img.onload = resolve;
-        img.onerror = reject;
-      });
+      // Ensure we use the correct filename/extension
+      // If filename doesn't have an extension, try to derive from blob type or default to jpg
+      let finalFilename = filename;
+      if (!filename.includes('.')) {
+        const type = blob.type.split('/')[1] || 'jpg';
+        finalFilename = `${filename}.${type}`;
+      }
 
-      const canvas = document.createElement("canvas");
-      canvas.width = img.naturalWidth;
-      canvas.height = img.naturalHeight;
-      const ctx = canvas.getContext("2d");
-
-      if (!ctx) throw new Error("Could not get canvas context");
-
-      // Fill background with white in case of transparency
-      ctx.fillStyle = "#FFFFFF";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(img, 0, 0);
-
-      canvas.toBlob(
-        (blob) => {
-          if (!blob) throw new Error("Could not create blob");
-          const url = window.URL.createObjectURL(blob);
-          const link = document.createElement("a");
-          link.href = url;
-          // Ensure extension is .jpg
-          const downloadName = filename.replace(/\.[^/.]+$/, "") + ".jpg";
-          link.download = downloadName;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
-        },
-        "image/jpeg",
-        1.0 // Maximum quality
-      );
+      link.download = finalFilename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
     } catch (error) {
       console.error("Download failed:", error);
-      // Fallback to simple download if canvas fails
-      try {
-        const response = await fetch(src);
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url);
-      } catch (fallbackError) {
-        console.error("Fallback download failed:", fallbackError);
-      }
     }
   };
 

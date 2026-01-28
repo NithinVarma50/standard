@@ -1,0 +1,15 @@
+appId: com.standard.wallpaper
+productName: Standard Wallpaper
+directories:
+  output: release
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+extends: null
+win:
+  target: nsis
+  icon: dist/og-image.png
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
