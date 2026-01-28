@@ -146,19 +146,31 @@ export function SaveButton({
                     </div>
                 </div>
 
-                {/* PWA Option (Bottom Row) */}
+                {/* PWA Option (Highlighted as Recommended) */}
                 {onSave && (
                     <div className="border-t border-white/10 pt-4 mt-2">
-                        <button
-                            onClick={handlePwaInstall}
-                            className="w-full flex-col items-center justify-center gap-1 p-3 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
-                        >
-                            <div className="flex items-center justify-center gap-2 text-sm font-medium">
-                                <Globe className="w-4 h-4" />
-                                <span>Install as Web App (PWA)</span>
+                        <div className="relative">
+                            {/* Recommended Badge */}
+                            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-10">
+                                <span className="px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wider shadow-lg">
+                                    ⭐ Recommended
+                                </span>
                             </div>
-                            <span className="block text-[10px] text-white/50">No download required • Auto-updates • Works offline</span>
-                        </button>
+
+                            <button
+                                onClick={handlePwaInstall}
+                                className="w-full flex-col items-center justify-center gap-1 p-4 rounded-lg bg-gradient-to-r from-green-500/20 to-emerald-500/20 hover:from-green-500/30 hover:to-emerald-500/30 border-2 border-green-500/50 hover:border-green-500/70 transition-all duration-200 group relative overflow-hidden"
+                            >
+                                {/* Shine effect */}
+                                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+                                <div className="flex items-center justify-center gap-2 text-sm font-bold text-green-400 relative z-10">
+                                    <Globe className="w-5 h-5" />
+                                    <span>Install as Web App (PWA)</span>
+                                </div>
+                                <span className="block text-[10px] text-white/70 font-medium relative z-10">No download • Auto-updates • Works offline • Instant access</span>
+                            </button>
+                        </div>
                     </div>
                 )}
             </DialogContent>
