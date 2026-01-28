@@ -88,7 +88,7 @@ export function SaveButton({
                 <div className="grid grid-cols-2 gap-4 py-4">
                     {/* Desktop (Windows) */}
                     <a
-                        href="https://github.com/NithinVarma50/standard/releases/download/v1.0.0/Standard-Wallpaper.exe"
+                        href="https://github.com/NithinVarma50/standard/releases/download/v1.0.0/Standard%20Wallpaper.exe"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-colors gap-3 group relative overflow-hidden"
