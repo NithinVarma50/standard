@@ -86,43 +86,23 @@ export function SaveButton({
                     <DialogTitle className="text-xl font-bold text-center">Choose Platform</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-2 gap-4 py-4">
-                    {/* Desktop (Windows) */}
-                    <a
-                        href="https://github.com/NithinVarma50/standard/releases/download/v1.0.0/Standard.Wallpaper.exe"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-colors gap-3 group relative overflow-hidden"
-                        onClick={() => {
-                            setIsOpen(false);
-                            confetti({ particleCount: 50, spread: 60, origin: { y: 0.7 } })
-                        }}
-                    >
-                        <Monitor className="w-8 h-8 text-blue-400 group-hover:scale-110 transition-transform mb-2" />
-                        <div className="text-center space-y-1">
+                    {/* Desktop (Windows) - Coming Soon */}
+                    <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 border border-white/5 gap-3 opacity-50 cursor-not-allowed">
+                        <Monitor className="w-8 h-8 text-gray-400" />
+                        <div className="text-center">
                             <span className="block font-medium">Windows</span>
-                            <span className="text-[10px] text-white/50 block leading-tight">Native Experience</span>
-                            <span className="text-[10px] text-green-400 block leading-tight">Direct Download</span>
+                            <span className="text-xs text-white/50">Coming Soon</span>
                         </div>
-                    </a>
+                    </div>
 
-                    {/* Mobile (Android) */}
-                    <a
-                        href="https://github.com/NithinVarma50/standard/releases/download/v1.0.0/standard-wallpaper.apk"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-colors gap-3 group relative overflow-hidden"
-                        onClick={() => {
-                            setIsOpen(false);
-                            confetti({ particleCount: 50, spread: 60, origin: { y: 0.7 } })
-                        }}
-                    >
-                        <Smartphone className="w-8 h-8 text-green-400 group-hover:scale-110 transition-transform mb-2" />
-                        <div className="text-center space-y-1">
+                    {/* Mobile (Android) - Coming Soon */}
+                    <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 border border-white/5 gap-3 opacity-50 cursor-not-allowed">
+                        <Smartphone className="w-8 h-8 text-gray-400" />
+                        <div className="text-center">
                             <span className="block font-medium">Android</span>
-                            <span className="text-[10px] text-white/50 block leading-tight">Native Experience</span>
-                            <span className="text-[10px] text-green-400 block leading-tight">Direct Download</span>
+                            <span className="text-xs text-white/50">Coming Soon</span>
                         </div>
-                    </a>
+                    </div>
 
                     {/* macOS - Coming Soon */}
                     <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 border border-white/5 gap-3 opacity-50 cursor-not-allowed">
