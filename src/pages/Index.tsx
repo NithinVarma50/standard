@@ -51,7 +51,7 @@ const Index = () => {
             { label: "Mobile", href: "/mobile" },
           ]}
           showPwaInstall={true}
-          onPwaInstall={showInstall ? handleInstall : undefined}
+          onPwaInstall={handleInstall}
           partners={[]}
           partnersTitle=""
           ctaButtonText=""
