@@ -90,17 +90,18 @@ export function SaveButton({
                     <a
                         href="/downloads/Standard Wallpaper.exe"
                         download
-                        className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-colors gap-3 group"
+                        className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-colors gap-3 group relative overflow-hidden"
                         onClick={(e) => {
                             // Allow default download behavior
                             setIsOpen(false);
                             confetti({ particleCount: 50, spread: 60, origin: { y: 0.7 } })
                         }}
                     >
-                        <Monitor className="w-8 h-8 text-blue-400 group-hover:scale-110 transition-transform" />
-                        <div className="text-center">
+                        <Monitor className="w-8 h-8 text-blue-400 group-hover:scale-110 transition-transform mb-2" />
+                        <div className="text-center space-y-1">
                             <span className="block font-medium">Windows</span>
-                            <span className="text-xs text-white/50">Desktop App</span>
+                            <span className="text-[10px] text-white/50 block leading-tight">Native Experience</span>
+                            <span className="text-[10px] text-green-400 block leading-tight">Direct Download</span>
                         </div>
                     </a>
 
@@ -108,17 +109,18 @@ export function SaveButton({
                     <a
                         href="/downloads/standard-wallpaper.apk"
                         download
-                        className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-colors gap-3 group"
+                        className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-colors gap-3 group relative overflow-hidden"
                         onClick={(e) => {
                             // Allow default download behavior
                             setIsOpen(false);
                             confetti({ particleCount: 50, spread: 60, origin: { y: 0.7 } })
                         }}
                     >
-                        <Smartphone className="w-8 h-8 text-green-400 group-hover:scale-110 transition-transform" />
-                        <div className="text-center">
+                        <Smartphone className="w-8 h-8 text-green-400 group-hover:scale-110 transition-transform mb-2" />
+                        <div className="text-center space-y-1">
                             <span className="block font-medium">Android</span>
-                            <span className="text-xs text-white/50">Mobile App</span>
+                            <span className="text-[10px] text-white/50 block leading-tight">Native Experience</span>
+                            <span className="text-[10px] text-green-400 block leading-tight">Direct Download</span>
                         </div>
                     </a>
 
@@ -149,10 +151,13 @@ export function SaveButton({
                     <div className="border-t border-white/10 pt-4 mt-2">
                         <button
                             onClick={handlePwaInstall}
-                            className="w-full flex items-center justify-center gap-2 p-3 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-sm font-medium"
+                            className="w-full flex-col items-center justify-center gap-1 p-3 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
                         >
-                            <Globe className="w-4 h-4" />
-                            Install as Web App (PWA)
+                            <div className="flex items-center justify-center gap-2 text-sm font-medium">
+                                <Globe className="w-4 h-4" />
+                                <span>Install as Web App (PWA)</span>
+                            </div>
+                            <span className="block text-[10px] text-white/50">No download required • Auto-updates • Works offline</span>
                         </button>
                     </div>
                 )}
