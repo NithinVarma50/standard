@@ -1,8 +1,7 @@
+import React, { useEffect, useState } from "react";
 import ResponsiveHeroBanner from "@/components/ui/responsive-hero-banner";
 import { Features } from "@/components/Features";
 import { Footer } from "@/components/Footer";
-
-import { useEffect, useState } from "react";
 
 import { Counter } from "@/components/ui/counter";
 import { desktopWallpapers } from "./Desktop";
@@ -50,7 +49,7 @@ const Index = () => {
             { label: "Desktop", href: "/desktop" },
             { label: "Mobile", href: "/mobile" },
           ]}
-          showPwaInstall={true}
+          showPwaInstall={!!deferredPrompt}
           onPwaInstall={handleInstall}
           partners={[]}
           partnersTitle=""

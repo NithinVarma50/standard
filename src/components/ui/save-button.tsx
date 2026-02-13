@@ -85,74 +85,43 @@ export function SaveButton({
                 <DialogHeader>
                     <DialogTitle className="text-xl font-bold text-center">Choose Platform</DialogTitle>
                 </DialogHeader>
-                <div className="grid grid-cols-2 gap-4 py-4">
-                    {/* Desktop (Windows) - Coming Soon */}
-                    <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 border border-white/5 gap-3 opacity-50 cursor-not-allowed">
-                        <Monitor className="w-8 h-8 text-gray-400" />
-                        <div className="text-center">
-                            <span className="block font-medium">Windows</span>
-                            <span className="text-xs text-white/50">Coming Soon</span>
-                        </div>
-                    </div>
+                <div className="flex flex-col gap-4 py-4">
+                    {/* PWA Option (Highlighted as Recommended) */}
+                    {onSave && (
+                        <div className="border-t border-white/10 pt-4 mt-2">
+                            <div className="relative">
+                                {/* Recommended Badge */}
+                                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-10">
+                                    <span className="px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wider shadow-lg">
+                                        ⭐ Recommended
+                                    </span>
+                                </div>
 
-                    {/* Mobile (Android) - Coming Soon */}
-                    <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 border border-white/5 gap-3 opacity-50 cursor-not-allowed">
-                        <Smartphone className="w-8 h-8 text-gray-400" />
-                        <div className="text-center">
-                            <span className="block font-medium">Android</span>
-                            <span className="text-xs text-white/50">Coming Soon</span>
-                        </div>
-                    </div>
+                                <button
+                                    onClick={() => {
+                                        confetti({
+                                            particleCount: 100,
+                                            spread: 70,
+                                            origin: { y: 0.6 }
+                                        });
+                                        handlePwaInstall();
+                                    }}
+                                    className="w-full flex-col items-center justify-center gap-1 p-4 rounded-lg bg-gradient-to-r from-green-500/20 to-emerald-500/20 hover:from-green-500/30 hover:to-emerald-500/30 border-2 border-green-500/50 hover:border-green-500/70 transition-all duration-200 group relative overflow-hidden"
+                                >
+                                    {/* Shine effect */}
+                                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-                    {/* macOS - Coming Soon */}
-                    <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 border border-white/5 gap-3 opacity-50 cursor-not-allowed">
-                        <Apple className="w-8 h-8 text-gray-400" />
-                        <div className="text-center">
-                            <span className="block font-medium">macOS</span>
-                            <span className="text-xs text-white/50">Coming Soon</span>
+                                    <div className="flex items-center justify-center gap-2 text-sm font-bold text-green-400 relative z-10">
+                                        <Globe className="w-5 h-5" />
+                                        <span>Install as Web App (PWA)</span>
+                                    </div>
+                                    <span className="block text-[10px] text-white/70 font-medium relative z-10">No download • Auto-updates • Works offline • Instant access</span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-
-                    {/* iOS - Coming Soon */}
-                    <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 border border-white/5 gap-3 opacity-50 cursor-not-allowed">
-                        <div className="relative">
-                            <Smartphone className="w-8 h-8 text-gray-400" />
-                            <Apple className="w-3 h-3 absolute bottom-0 right-0 text-white fill-current" />
-                        </div>
-                        <div className="text-center">
-                            <span className="block font-medium">iOS</span>
-                            <span className="text-xs text-white/50">Coming Soon</span>
-                        </div>
-                    </div>
+                    )}
                 </div>
 
-                {/* PWA Option (Highlighted as Recommended) */}
-                {onSave && (
-                    <div className="border-t border-white/10 pt-4 mt-2">
-                        <div className="relative">
-                            {/* Recommended Badge */}
-                            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-10">
-                                <span className="px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wider shadow-lg">
-                                    ⭐ Recommended
-                                </span>
-                            </div>
-
-                            <button
-                                onClick={handlePwaInstall}
-                                className="w-full flex-col items-center justify-center gap-1 p-4 rounded-lg bg-gradient-to-r from-green-500/20 to-emerald-500/20 hover:from-green-500/30 hover:to-emerald-500/30 border-2 border-green-500/50 hover:border-green-500/70 transition-all duration-200 group relative overflow-hidden"
-                            >
-                                {/* Shine effect */}
-                                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-                                <div className="flex items-center justify-center gap-2 text-sm font-bold text-green-400 relative z-10">
-                                    <Globe className="w-5 h-5" />
-                                    <span>Install as Web App (PWA)</span>
-                                </div>
-                                <span className="block text-[10px] text-white/70 font-medium relative z-10">No download • Auto-updates • Works offline • Instant access</span>
-                            </button>
-                        </div>
-                    </div>
-                )}
             </DialogContent>
         </Dialog>
     )

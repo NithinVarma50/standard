@@ -115,6 +115,39 @@ import batch3_47 from "@/assets/mobile-batch3-47.jpg";
 import batch3_48 from "@/assets/mobile-batch3-48.jpg";
 import batch3_49 from "@/assets/mobile-batch3-49.jpg";
 
+
+// New Batch imports
+import mobileNew1 from "@/assets/mobile-new-1.jfif";
+import mobileNew2 from "@/assets/mobile-new-2.jfif";
+import mobileNew3 from "@/assets/mobile-new-3.jfif";
+import mobileNew4 from "@/assets/mobile-new-4.jfif";
+import mobileNew5 from "@/assets/mobile-new-5.jfif";
+import mobileNew6 from "@/assets/mobile-new-6.jfif";
+import mobileNew7 from "@/assets/mobile-new-7.jfif";
+import mobileNew8 from "@/assets/mobile-new-8.jfif";
+import mobileNew9 from "@/assets/mobile-new-9.jfif";
+import mobileNew10 from "@/assets/mobile-new-10.jfif";
+import mobileNew11 from "@/assets/mobile-new-11.jfif";
+import mobileNew12 from "@/assets/mobile-new-12.jfif";
+import mobileNew13 from "@/assets/mobile-new-13.jfif";
+import mobileNew14 from "@/assets/mobile-new-14.jfif";
+import mobileNew15 from "@/assets/mobile-new-15.jfif";
+import mobileNew16 from "@/assets/mobile-new-16.jfif";
+import mobileNew17 from "@/assets/mobile-new-17.jfif";
+import mobileNew18 from "@/assets/mobile-new-18.jfif";
+import mobileNew19 from "@/assets/mobile-new-19.jfif";
+import mobileNew20 from "@/assets/mobile-new-20.jfif";
+import mobileNew21 from "@/assets/mobile-new-21.jfif";
+import mobileNew22 from "@/assets/mobile-new-22.jfif";
+import mobileNew23 from "@/assets/mobile-new-23.jfif";
+import mobileNew24 from "@/assets/mobile-new-24.jfif";
+import mobileNew25 from "@/assets/mobile-new-25.jfif";
+import mobileNew26 from "@/assets/mobile-new-26.jfif";
+import mobileNew27 from "@/assets/mobile-new-27.jfif";
+import mobileNew28 from "@/assets/mobile-new-28.jfif";
+import mobileNew29 from "@/assets/mobile-new-29.jfif";
+import mobileNew30 from "@/assets/mobile-new-30.jfif";
+
 // Batch 6 generation (36 images)
 const batch6Wallpapers = Array.from({ length: 36 }, (_, i) => {
   const num = i + 1;
@@ -146,6 +179,38 @@ const batch4Wallpapers = Array.from({ length: 28 }, (_, i) => {
 }).reverse();
 
 export const mobileWallpapers = [
+  // Newest Batch
+  { src: mobileNew30, alt: "Mobile Wallpaper 30", filename: "standard-mobile-new-30.jpg" },
+  { src: mobileNew29, alt: "Mobile Wallpaper 29", filename: "standard-mobile-new-29.jpg" },
+  { src: mobileNew28, alt: "Mobile Wallpaper 28", filename: "standard-mobile-new-28.jpg" },
+  { src: mobileNew27, alt: "Mobile Wallpaper 27", filename: "standard-mobile-new-27.jpg" },
+  { src: mobileNew26, alt: "Mobile Wallpaper 26", filename: "standard-mobile-new-26.jpg" },
+  { src: mobileNew25, alt: "Mobile Wallpaper 25", filename: "standard-mobile-new-25.jpg" },
+  { src: mobileNew24, alt: "Mobile Wallpaper 24", filename: "standard-mobile-new-24.jpg" },
+  { src: mobileNew23, alt: "Mobile Wallpaper 23", filename: "standard-mobile-new-23.jpg" },
+  { src: mobileNew22, alt: "Mobile Wallpaper 22", filename: "standard-mobile-new-22.jpg" },
+  { src: mobileNew21, alt: "Mobile Wallpaper 21", filename: "standard-mobile-new-21.jpg" },
+  { src: mobileNew20, alt: "Mobile Wallpaper 20", filename: "standard-mobile-new-20.jpg" },
+  { src: mobileNew19, alt: "Mobile Wallpaper 19", filename: "standard-mobile-new-19.jpg" },
+  { src: mobileNew18, alt: "Mobile Wallpaper 18", filename: "standard-mobile-new-18.jpg" },
+  { src: mobileNew17, alt: "Mobile Wallpaper 17", filename: "standard-mobile-new-17.jpg" },
+  { src: mobileNew16, alt: "Mobile Wallpaper 16", filename: "standard-mobile-new-16.jpg" },
+  { src: mobileNew15, alt: "Mobile Wallpaper 15", filename: "standard-mobile-new-15.jpg" },
+  { src: mobileNew14, alt: "Mobile Wallpaper 14", filename: "standard-mobile-new-14.jpg" },
+  { src: mobileNew13, alt: "Mobile Wallpaper 13", filename: "standard-mobile-new-13.jpg" },
+  { src: mobileNew12, alt: "Mobile Wallpaper 12", filename: "standard-mobile-new-12.jpg" },
+  { src: mobileNew11, alt: "Mobile Wallpaper 11", filename: "standard-mobile-new-11.jpg" },
+  { src: mobileNew10, alt: "Mobile Wallpaper 10", filename: "standard-mobile-new-10.jpg" },
+  { src: mobileNew9, alt: "Mobile Wallpaper 9", filename: "standard-mobile-new-09.jpg" },
+  { src: mobileNew8, alt: "Mobile Wallpaper 8", filename: "standard-mobile-new-08.jpg" },
+  { src: mobileNew7, alt: "Mobile Wallpaper 7", filename: "standard-mobile-new-07.jpg" },
+  { src: mobileNew6, alt: "Mobile Wallpaper 6", filename: "standard-mobile-new-06.jpg" },
+  { src: mobileNew5, alt: "Mobile Wallpaper 5", filename: "standard-mobile-new-05.jpg" },
+  { src: mobileNew4, alt: "Mobile Wallpaper 4", filename: "standard-mobile-new-04.jpg" },
+  { src: mobileNew3, alt: "Mobile Wallpaper 3", filename: "standard-mobile-new-03.jpg" },
+  { src: mobileNew2, alt: "Mobile Wallpaper 2", filename: "standard-mobile-new-02.jpg" },
+  { src: mobileNew1, alt: "Mobile Wallpaper 1", filename: "standard-mobile-new-01.jpg" },
+
   // Newest first (Batch 6)
   ...batch6Wallpapers,
 
@@ -287,12 +352,13 @@ const Mobile = () => {
           <SectionLabel>Mobile</SectionLabel>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
             {mobileWallpapers.map((wallpaper, index) => (
-              <WallpaperCard
-                key={`mobile-${index}`}
-                src={wallpaper.src}
-                alt={wallpaper.alt}
-                filename={wallpaper.filename}
-              />
+              <div key={`mobile-${index}`}>
+                <WallpaperCard
+                  src={wallpaper.src}
+                  alt={wallpaper.alt}
+                  filename={wallpaper.filename}
+                />
+              </div>
             ))}
           </div>
         </section>
