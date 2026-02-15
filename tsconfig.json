@@ -17,16 +17,13 @@
     "allowJs": true,
     "noUnusedLocals": false,
     "strictNullChecks": false,
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "module": "ESNext",
     "jsx": "react-jsx",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "strict": false,
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    "strict": false
   }
 }

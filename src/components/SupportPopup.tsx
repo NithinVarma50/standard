@@ -10,21 +10,15 @@ export function SupportPopup() {
 
     useEffect(() => {
         // Only show on home page
-        if (location.pathname !== "/") {
-            setIsOpen(false);
-            return;
-        }
-
-        const hasSeen = sessionStorage.getItem("support-announcement-seen");
-        // Show instantly if not seen
-        if (!hasSeen) {
+        if (location.pathname === "/") {
             setIsOpen(true);
+        } else {
+            setIsOpen(false);
         }
     }, [location.pathname]);
 
     const dismiss = () => {
         setIsOpen(false);
-        sessionStorage.setItem("support-announcement-seen", "true");
     };
 
     return (

@@ -10,7 +10,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
@@ -28,10 +28,7 @@
       "@/*": [
         "./src/*"
       ]
-    },
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    }
   },
   "include": [
     "src"
