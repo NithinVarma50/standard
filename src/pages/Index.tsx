@@ -22,6 +22,15 @@ const Index = () => {
     return () => window.removeEventListener('beforeinstallprompt', handler);
   }, []);
 
+  useEffect(() => {
+    if (!localStorage.getItem("support-shown")) {
+      setTimeout(() => {
+        alert("You can support STANDARD from the Support button.");
+        localStorage.setItem("support-shown", "1");
+      }, 7000);
+    }
+  }, []);
+
   const handleInstall = async () => {
     if (!deferredPrompt) return;
     deferredPrompt.prompt();

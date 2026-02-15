@@ -12,6 +12,8 @@ const queryClient = new QueryClient();
 
 import ErrorBoundary from "@/components/ErrorBoundary";
 
+import Support from "./pages/Support";
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -23,9 +25,18 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/desktop" element={<Desktop />} />
             <Route path="/mobile" element={<Mobile />} />
+            <Route path="/support" element={<Support />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
+          <a
+            href="/support"
+            className="fixed bottom-6 right-6 z-50
+            bg-white/10 backdrop-blur-xl border border-white/20
+            px-5 py-2 rounded-full text-sm hover:bg-white/20 transition"
+          >
+            Support
+          </a>
         </BrowserRouter>
       </ErrorBoundary>
     </TooltipProvider>
