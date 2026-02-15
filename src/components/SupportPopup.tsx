@@ -1,7 +1,7 @@
 
-import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface SupportPopupProps {
     isOpen: boolean;
@@ -18,51 +18,77 @@ export function SupportPopup({ isOpen, onOpenChange }: SupportPopupProps) {
     };
 
     return (
-        <Dialog open={isOpen} onOpenChange={onOpenChange}>
-            <DialogContent className="sm:max-w-md text-center">
-                <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold text-center">Support STANDARD</DialogTitle>
-                </DialogHeader>
+        <AnimatePresence>
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="fixed bottom-20 right-4 z-50 w-full max-w-[320px]"
+                >
+                    <div className="bg-neutral-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
 
-                <div className="flex flex-col items-center justify-center space-y-6 py-4">
-                    <p className="text-neutral-400 text-sm max-w-[280px]">
-                        STANDARD is completely free. <br />
-                        If you like it, you can support the project.
-                    </p>
-
-                    <div className="relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-                        <img
-                            src="/upi-qr.png"
-                            alt="UPI QR"
-                            className="relative w-48 rounded-xl shadow-2xl"
-                        />
-                    </div>
-
-                    <div className="flex flex-col gap-3 w-full max-w-xs">
-                        <a
-                            href={payLink}
-                            className="w-full bg-white text-black font-semibold py-2.5 rounded-full hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2"
-                        >
-                            Pay Now
-                        </a>
-
-                        <div className="flex items-center justify-between bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                            <span className="text-xs text-neutral-400 font-mono">{upi}</span>
+                        {/* Header / Close */}
+                        <div className="flex items-center justify-between px-5 pt-4">
+                            <h3 className="text-white font-semibold text-base">Support STANDARD</h3>
                             <button
-                                onClick={copy}
-                                className="text-[10px] uppercase font-bold tracking-wider px-2 py-1 bg-white/10 rounded hover:bg-white/20 transition-colors"
+                                onClick={() => onOpenChange(false)}
+                                className="text-neutral-400 hover:text-white transition-colors"
                             >
-                                Copy
+                                <X size={18} />
                             </button>
                         </div>
-                    </div>
 
-                    <p className="text-[10px] text-neutral-600">
-                        Thank you ❤️
-                    </p>
-                </div>
-            </DialogContent>
-        </Dialog>
+                        <div className="p-5 flex flex-col items-center">
+
+                            <p className="text-neutral-400 text-xs text-center mb-4 leading-relaxed">
+                                STANDARD is free. If you like it,<br /> consider supporting the project.
+                            </p>
+
+                            {/* QR Code Area */}
+                            <div className="relative group mb-5">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-white/5 rounded-xl blur opacity-30"></div>
+                                <img
+                                    src="/upi-qr.png"
+                                    alt="UPI QR"
+                                    className="relative w-40 rounded-lg shadow-lg"
+                                />
+                            </div>
+
+                            {/* Actions */}
+                            <div className="w-full flex flex-col gap-2">
+                                <a
+                                    href={payLink}
+                                    className="w-full bg-white text-black text-sm font-semibold py-2.5 rounded-xl hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 shadow-sm"
+                                >
+                                    Pay Now
+                                </a>
+
+                                <div className="flex items-center gap-2">
+                                    <div className="flex-1 flex items-center justify-between bg-white/5 px-3 py-2 rounded-xl border border-white/5">
+                                        <span className="text-[10px] text-neutral-400 font-mono truncate max-w-[120px]">{upi}</span>
+                                        <button
+                                            onClick={copy}
+                                            className="text-[10px] font-medium text-neutral-300 hover:text-white transition-colors"
+                                        >
+                                            COPY
+                                        </button>
+                                    </div>
+
+                                    <button
+                                        onClick={() => onOpenChange(false)}
+                                        className="px-3 py-2 rounded-xl hover:bg-white/5 text-[10px] text-neutral-500 hover:text-neutral-300 transition-colors whitespace-nowrap"
+                                    >
+                                        Maybe later
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </motion.div>
+            )}
+        </AnimatePresence>
     );
 }
