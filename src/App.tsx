@@ -13,6 +13,7 @@ const queryClient = new QueryClient();
 import ErrorBoundary from "@/components/ErrorBoundary";
 
 import Support from "./pages/Support";
+import { SupportPopup } from "./components/SupportPopup";
 
 const App = () => {
   return (
@@ -30,6 +31,8 @@ const App = () => {
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
+
+            <SupportPopup />
 
             <Link
               to="/support"
