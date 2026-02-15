@@ -3,6 +3,10 @@ import react from "@vitejs/plugin-react-swc";
 import { VitePWA } from 'vite-plugin-pwa';
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -19,6 +23,11 @@ export default defineConfig(({ mode }) => ({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt'],
+      workbox: {
+        skipWaiting: true,
+        clientsClaim: true,
+        cleanupOutdatedCaches: true,
+      },
       manifest: {
         name: 'Standard Wallpapers',
         short_name: 'Standard',
