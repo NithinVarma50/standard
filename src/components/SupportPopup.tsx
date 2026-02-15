@@ -15,17 +15,16 @@ export function SupportPopup() {
             return;
         }
 
-        const hasSeen = localStorage.getItem("support-announcement-seen");
-        // Show after 5 seconds if not seen
+        const hasSeen = sessionStorage.getItem("support-announcement-seen");
+        // Show instantly if not seen
         if (!hasSeen) {
-            const timer = setTimeout(() => setIsOpen(true), 5000);
-            return () => clearTimeout(timer);
+            setIsOpen(true);
         }
     }, [location.pathname]);
 
     const dismiss = () => {
         setIsOpen(false);
-        localStorage.setItem("support-announcement-seen", "true");
+        sessionStorage.setItem("support-announcement-seen", "true");
     };
 
     return (
