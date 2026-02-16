@@ -16,6 +16,8 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import Support from "./pages/Support";
 import { SupportPopup } from "./components/SupportPopup";
 
+import { Analytics } from "@vercel/analytics/react";
+
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
@@ -44,6 +46,7 @@ const App = () => {
               Support
             </Link>
           </BrowserRouter>
+          <Analytics />
         </ErrorBoundary>
       </TooltipProvider>
     </QueryClientProvider>
