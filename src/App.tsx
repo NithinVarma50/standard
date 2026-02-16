@@ -45,8 +45,8 @@ const App = () => {
             >
               Support
             </Link>
+            <Analytics />
           </BrowserRouter>
-          <Analytics />
         </ErrorBoundary>
       </TooltipProvider>
     </QueryClientProvider>
